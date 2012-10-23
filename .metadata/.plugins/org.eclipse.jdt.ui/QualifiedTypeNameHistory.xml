@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalADemo.DemoActivity"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.Transport.StateBase"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.transport.longpolling.DisconnectedState"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.transport.longpolling.LongPollingTransport"/>
+<fullyQualifiedTypeName name="com.androidquery.AQuery"/>
+</qualifiedTypeNameHistroy>
