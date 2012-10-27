@@ -17,6 +17,7 @@ import com.androidquery.util.Constants;
 import com.zsoft.SignalA.Connection;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
+import com.zsoft.SignalA.SendCallback;
 
 public class ConnectedState extends StopableStateWithCallback {
 	protected static final String TAG = "ConnectedState";
@@ -43,8 +44,12 @@ public class ConnectedState extends StopableStateWithCallback {
 	}
 
 	@Override
-	public boolean Send(final CharSequence text) {
-		if(DoStop()) return false; 
+	public void Send(final CharSequence text, final SendCallback sendCb) {
+		if(DoStop())
+		{
+			sendCb.OnError(new Exception("Connection is about to close"));
+			return; 
+		}
 
 		AQuery aq = new AQuery(mConnection.getContext());
 	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") +  "send?transport=LongPolling&connectionId=" + mConnection.getConnectionId();
@@ -54,10 +59,13 @@ public class ConnectedState extends StopableStateWithCallback {
 			public void callback(String url, String result, AjaxStatus status) {
 				if(status.getCode() == 200){
 					Log.v(TAG, "Message sent: " + text);
+					sendCb.OnSent(text);
 				}
 				else
 				{
-					mConnection.OnError(new Exception("Error sending message"));
+					Exception ex = new Exception("Error sending message");
+					mConnection.OnError(ex);
+					sendCb.OnError(ex);
 				}
 			}
 		};
@@ -67,8 +75,6 @@ public class ConnectedState extends StopableStateWithCallback {
 		
 		cb.url(url).type(String.class).expire(-1).params(params).method(Constants.METHOD_POST);
 		aq.ajax(cb);
-
-		return true;
 	}
 
 	@Override

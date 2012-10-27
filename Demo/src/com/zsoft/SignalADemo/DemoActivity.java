@@ -7,6 +7,7 @@ import com.zsoft.SignalA.transport.longpolling.LongPollingTransport;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
+import com.zsoft.SignalA.SendCallback;
 
 public class DemoActivity extends Activity {
 
@@ -65,7 +66,17 @@ public class DemoActivity extends Activity {
 		if(con!=null &&			
 			aq.id(R.id.etText).getText().length()>0)
 		{
-			con.Send(aq.id(R.id.etText).getText());
+			con.Send(aq.id(R.id.etText).getText(), new SendCallback() {
+				public void OnError(Exception ex)
+				{
+		            Toast.makeText(DemoActivity.this, "Error when sending: " + ex.getMessage(), Toast.LENGTH_LONG).show();
+				}
+				public void OnSent(CharSequence message)
+				{
+		            Toast.makeText(DemoActivity.this, "Sent: " + message, Toast.LENGTH_SHORT).show();
+				}
+				
+			});
 		}
 	}
 	

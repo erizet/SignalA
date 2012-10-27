@@ -90,8 +90,8 @@ public abstract class Connection {
 		getCurrentState().Stop();
 	}
 
-	public boolean Send(CharSequence text) {
-		return getCurrentState().Send(text);
+	public void Send(CharSequence text, SendCallback callback) {
+		getCurrentState().Send(text, callback);
 	}
 
 

@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import com.zsoft.SignalA.Connection;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.Transport.StateBase;
+import com.zsoft.SignalA.SendCallback;
 
 public class DisconnectedState extends StateBase {
 	private AtomicBoolean requestStart = new AtomicBoolean(false);
@@ -29,8 +30,8 @@ public class DisconnectedState extends StateBase {
 	}
 
 	@Override
-	public boolean Send(CharSequence text) {
-		return false;
+	public void Send(CharSequence text, SendCallback callback) {
+		callback.OnError(new Exception("Not connected"));
 	}
 
 	@Override

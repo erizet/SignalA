@@ -13,6 +13,7 @@ import com.zsoft.SignalA.Connection;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.Transport.StateBase;
+import com.zsoft.SignalA.SendCallback;
 
 public class DisconnectingState extends StateBase {
 
@@ -36,8 +37,8 @@ public class DisconnectingState extends StateBase {
 	}
 
 	@Override
-	public boolean Send(CharSequence text) {
-		return false;
+	public void Send(CharSequence text, SendCallback callback) {
+		callback.OnError(new Exception("Not connected"));
 	}
 	
 	@Override
@@ -60,4 +61,5 @@ public class DisconnectingState extends StateBase {
 		cb.url(url).type(String.class).expire(-1).params(params).method(Constants.METHOD_POST); //.timeout(5000);
 		aq.ajax(cb);
 	}
+
 }

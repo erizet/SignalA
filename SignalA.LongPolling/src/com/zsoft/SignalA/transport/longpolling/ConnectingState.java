@@ -9,6 +9,7 @@ import com.androidquery.callback.AjaxStatus;
 import com.zsoft.SignalA.Connection;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
+import com.zsoft.SignalA.SendCallback;
 
 public class ConnectingState extends StopableStateWithCallback {
 	public ConnectingState(Connection connection) {
@@ -25,8 +26,8 @@ public class ConnectingState extends StopableStateWithCallback {
 	}
 
 	@Override
-	public boolean Send(CharSequence text) {
-		return false;
+	public void Send(CharSequence text, SendCallback callback) {
+		callback.OnError(new Exception("Not connected"));
 	}
 
 	@Override

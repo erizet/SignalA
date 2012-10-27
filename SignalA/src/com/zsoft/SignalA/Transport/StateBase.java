@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.zsoft.SignalA.Connection;
 import com.zsoft.SignalA.ConnectionState;
+import com.zsoft.SignalA.SendCallback;
 
 public abstract class StateBase {
     protected Connection mConnection;
@@ -35,5 +36,5 @@ public abstract class StateBase {
 
     protected abstract void OnRun();
 
-	public abstract boolean Send(CharSequence text);
+	public abstract void Send(CharSequence text, SendCallback callback);
 }

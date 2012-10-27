@@ -14,6 +14,7 @@ import com.androidquery.util.Constants;
 import com.zsoft.SignalA.Connection;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
+import com.zsoft.SignalA.SendCallback;
 
 public class ReconnectingState extends StopableStateWithCallback {
 
@@ -31,8 +32,8 @@ public class ReconnectingState extends StopableStateWithCallback {
 	}
 
 	@Override
-	public boolean Send(CharSequence text) {
-		return false;
+	public void Send(CharSequence text, SendCallback callback) {
+		callback.OnError(new Exception("Not connected"));
 	}
 
 	@Override

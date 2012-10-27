@@ -264,3 +264,6 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 !SUBENTRY 2 org.eclipse.core.resources 4 274 2012-10-23 06:36:53.162
 !MESSAGE Resource is out of sync with the file system: '/SignalA/bin/jarlist.cache'.
+
+!ENTRY org.eclipse.ui 4 4 2012-10-23 20:41:04.809
+!MESSAGE Invalid preference page path: XML Syntax
