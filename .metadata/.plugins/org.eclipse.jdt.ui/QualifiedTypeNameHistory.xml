@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
-<fullyQualifiedTypeName name="com.zsoft.SignalADemo.DemoActivity"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Transport.StateBase"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.transport.longpolling.DisconnectedState"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.transport.longpolling.LongPollingTransport"/>
 <fullyQualifiedTypeName name="com.androidquery.AQuery"/>
+<fullyQualifiedTypeName name="com.androidquery.util.AQUtility"/>
+<fullyQualifiedTypeName name="java.io.CharConversionException"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.SendCallback"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalADemo.DemoActivity"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.CharSequence"/>
 </qualifiedTypeNameHistroy>
