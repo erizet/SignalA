@@ -56,14 +56,19 @@ public class ConnectingState extends StopableStateWithCallback {
 							{
 								mConnection.setConnectionId(connectionId);
 								mConnection.SetNewState(new ConnectedState(mConnection));
+								return;
+							}
+							else
+							{
+								mConnection.OnError(new Exception("Not supported protocol version."));
+								mConnection.SetNewState(new DisconnectedState(mConnection));
+								return;
 							}
 						
 						} catch (JSONException e) {
-							//connection.OnError("Unable to parse negotiationresponse.");
+							mConnection.OnError(new Exception("Unable to parse negotiation response."));
 							return;
 						}
-						
-	
 					}
 					else
 					{
