@@ -11,7 +11,7 @@ public abstract class Connection {
     private String mUrl = "";
 	private String mConnectionId = "";
 	private Context mContext;
-	private Integer mMessageId;
+	private String mMessageId;
 	private ITransport mTransport;
 
     public Connection(String url, Context context, ITransport transport)
@@ -64,14 +64,14 @@ public abstract class Connection {
 	}
 	
 	public boolean VerifyProtocolVersion(String protocolVersion) {
-		return protocolVersion.compareTo("1.0") == 0;
+		return protocolVersion.compareTo("1.1") == 0;
 	}
 
-	public Integer getMessageId() {
+	public String getMessageId() {
 		return mMessageId;
 	}
 
-	public void setMessageId(int messageId) {
+	public void setMessageId(String messageId) {
 		mMessageId = messageId;
 	}
 

@@ -7,5 +7,6 @@
     <string name="send">Send</string>
     <string name="disconnect">Disconnect</string>
     <string name="connect">Connect</string>
-
+    <string name="delaytest">Test delay</string>
+    
 </resources>

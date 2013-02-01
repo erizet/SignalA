@@ -65,18 +65,18 @@ public class ReconnectingState extends StopableStateWithCallback {
                 {
                     if (json!=null)
                     {
-                    	int newMessageId = -1;
+                    	String newMessageId = null;
                     	JSONArray messagesArray = null;
                     	JSONObject transportData = null;
                         boolean disconnected = false;
                         boolean timedOut = false;
 
             			try {
-            				timedOut = json.getBoolean("TimedOut");
-            				disconnected = json.getBoolean("Disconnect");
-            				newMessageId = json.getInt("MessageId");
-            				messagesArray = json.getJSONArray("Messages");
-            				transportData = json.getJSONObject("TransportData");
+            				timedOut = json.optInt("T") == 1;	
+            				disconnected = json.optBoolean("D", false);
+            				newMessageId = json.optString("C");
+            				messagesArray = json.getJSONArray("M");
+//            				transportData = json.getJSONObject("TransportData");
             			} catch (JSONException e) {
             				mConnection.OnError(new Exception("Error parsing response."));
             				return;

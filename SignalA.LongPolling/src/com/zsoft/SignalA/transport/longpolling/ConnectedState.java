@@ -1,5 +1,7 @@
 package com.zsoft.SignalA.transport.longpolling;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +56,7 @@ public class ConnectedState extends StopableStateWithCallback {
 		AQuery aq = new AQuery(mConnection.getContext());
 	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") +  "send?transport=LongPolling&connectionId=" + mConnection.getConnectionId();
 
-		AjaxCallback<String> cb = new AjaxCallback<String>() {
+	    AjaxCallback<String> cb = new AjaxCallback<String>() {
 			@Override
 			public void callback(String url, String result, AjaxStatus status) {
 				if(status.getCode() == 200){
@@ -106,18 +108,18 @@ public class ConnectedState extends StopableStateWithCallback {
                 {
                     if (json!=null)
                     {
-                    	int newMessageId = -1;
+                    	String newMessageId = null;
                     	JSONArray messagesArray = null;
                     	JSONObject transportData = null;
                         boolean disconnected = false;
                         boolean timedOut = false;
 
             			try {
-            				timedOut = json.getBoolean("TimedOut");
-            				disconnected = json.getBoolean("Disconnect");
-            				newMessageId = json.getInt("MessageId");
-            				messagesArray = json.getJSONArray("Messages");
-            				transportData = json.getJSONObject("TransportData");
+            				timedOut = json.optInt("T") == 1;	
+            				disconnected = json.optBoolean("D", false);
+            				newMessageId = json.optString("C");
+            				messagesArray = json.getJSONArray("M");
+            				//transportData = json.getJSONObject("TransportData");
             			} catch (JSONException e) {
             				mConnection.OnError(new Exception("Error parsing response."));
     						mConnection.SetNewState(new ReconnectingState(mConnection));
@@ -179,17 +181,25 @@ public class ConnectedState extends StopableStateWithCallback {
 			mCurrentCallback = cb;
 		}
 		//aq.ajax(url, JSONObject.class, cb);
-		cb.url(url).type(JSONObject.class).expire(-1).params(params).method(Constants.METHOD_POST).timeout(5000);
+		AjaxCallback.setReuseHttpClient(false);	// To fix wierd timeout issue
+		cb.url(url).type(JSONObject.class).expire(-1).params(params).method(Constants.METHOD_POST).timeout(115000);
 		aq.ajax(cb);
 	}
 
     protected String GetReceiveQueryString(Connection connection)
     {
+
             // ?transport={0}&connectionId={1}&messageId={2}&groups={3}&connectionData={4}{5}
 		String qs = "?transport=LongPolling";
 		qs += "&connectionId=" + connection.getConnectionId();
 		if(connection.getMessageId()!=null)
-			qs += "&messageId=" + connection.getMessageId();
+		{
+			try {
+				qs += "&messageId=" + URLEncoder.encode(connection.getMessageId(), "utf-8");
+			} catch (UnsupportedEncodingException e) {
+				Log.e(TAG, "Unsupported message encoding error, when encoding messageid.");
+			}
+		}
 
         //if (connection.Groups != null && connection.Groups.Any())
         //{
