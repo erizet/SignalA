@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.media.AudioRecord.OnRecordPositionUpdateListener;
 import android.util.Log;
 
 import com.zsoft.SignalA.Connection;

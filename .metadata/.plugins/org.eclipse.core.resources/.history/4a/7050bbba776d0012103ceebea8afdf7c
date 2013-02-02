@@ -13,8 +13,6 @@ import com.zsoft.SignalA.transport.longpolling.LongPollingTransport;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-
 import com.zsoft.SignalA.SendCallback;
 
 public class DemoActivity extends Activity {

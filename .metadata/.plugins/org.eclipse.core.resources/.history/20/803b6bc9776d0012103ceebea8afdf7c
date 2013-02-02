@@ -1,11 +1,12 @@
 package com.zsoft.SignalA.transport.longpolling;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
-
-import android.util.Log;
 
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
@@ -18,18 +19,15 @@ import com.zsoft.SignalA.SendCallback;
 import com.zsoft.SignalA.Transport.ProcessResult;
 import com.zsoft.SignalA.Transport.TransportHelper;
 
-public class ConnectedState extends StopableStateWithCallback {
-	protected static final String TAG = "ConnectedState";
-	private Object mCallbackLock = new Object();
-	private AjaxCallback<JSONObject> mCurrentCallback = null;
-	
-	public ConnectedState(Connection connection) {
+public class ReconnectingState extends StopableStateWithCallback {
+
+	public ReconnectingState(Connection connection) {
 		super(connection);
 	}
 
 	@Override
 	public ConnectionState getState() {
-		return ConnectionState.Connected;
+		return ConnectionState.Reconnecting;
 	}
 
 	@Override
@@ -37,60 +35,25 @@ public class ConnectedState extends StopableStateWithCallback {
 	}
 
 	@Override
-	public void Stop() {
-		mConnection.SetNewState(new DisconnectingState(mConnection));
-		super.Stop();
-	}
-
-	@Override
-	public void Send(final CharSequence text, final SendCallback sendCb) {
-		if(DoStop())
-		{
-			sendCb.OnError(new Exception("Connection is about to close"));
-			return; 
-		}
-
-		AQuery aq = new AQuery(mConnection.getContext());
-	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") +  "send?transport=" + TRANSPORT_NAME + "&connectionId=" + mConnection.getConnectionId();
-
-	    AjaxCallback<String> cb = new AjaxCallback<String>() {
-			@Override
-			public void callback(String url, String result, AjaxStatus status) {
-				if(status.getCode() == 200){
-					Log.v(TAG, "Message sent: " + text);
-					sendCb.OnSent(text);
-				}
-				else
-				{
-					Exception ex = new Exception("Error sending message");
-					mConnection.OnError(ex);
-					sendCb.OnError(ex);
-				}
-			}
-		};
-		
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("data", text);
-		
-		cb.url(url).type(String.class).expire(-1).params(params).method(Constants.METHOD_POST);
-		aq.ajax(cb);
+	public void Send(CharSequence text, SendCallback callback) {
+		callback.OnError(new Exception("Not connected"));
 	}
 
 	@Override
 	protected void OnRun() {
-		//AQUtility.setDebug(true);
-		//AjaxCallback.setTimeout(90000);
 		AQuery aq = new AQuery(mConnection.getContext());
 		
 		if(DoStop()) return; 
 
-	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
-
 	    if (mConnection.getMessageId() == null)
 		{
-			url += "connect";
+	    	// No message received yet....connect instead of reconnect
+			mConnection.SetNewState(new ConnectingState(mConnection));
+			return;
 		}
 	    
+	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
+		url += "reconnect";
 	    url += TransportHelper.GetReceiveQueryString(mConnection, null, TRANSPORT_NAME);
 
 		Map<String, Object> params = new HashMap<String, Object>();
@@ -110,7 +73,6 @@ public class ConnectedState extends StopableStateWithCallback {
                 		if(result.processingFailed)
                 		{
                     		mConnection.OnError(new Exception("Error while proccessing response."));
-                    		mConnection.SetNewState(new ReconnectingState(mConnection));
                 		}
                 		else if(result.disconnected)
                 		{
@@ -121,15 +83,14 @@ public class ConnectedState extends StopableStateWithCallback {
                     else
                     {
 					    mConnection.OnError(new Exception("Error when calling endpoint. Returncode: " + status.getCode()));
-						mConnection.SetNewState(new ReconnectingState(mConnection));
                     }
                 }
                 finally
                 {
 					mIsRunning.set(false);
-					
-					// Loop if we are still connected
-					if(mConnection.getCurrentState() == ConnectedState.this)
+
+					// Loop if we are still reconnecting
+					if(mConnection.getCurrentState() == ReconnectingState.this)
 						Run();
                 }
 			}
@@ -140,9 +101,9 @@ public class ConnectedState extends StopableStateWithCallback {
 			mCurrentCallback = cb;
 		}
 		//aq.ajax(url, JSONObject.class, cb);
-		AjaxCallback.setReuseHttpClient(false);	// To fix wierd timeout issue
-		cb.url(url).type(JSONObject.class).expire(-1).params(params).method(Constants.METHOD_POST).timeout(115000);
+		cb.url(url).type(JSONObject.class).expire(-1).params(params).method(Constants.METHOD_POST);
 		aq.ajax(cb);
 	}
+
 
 }

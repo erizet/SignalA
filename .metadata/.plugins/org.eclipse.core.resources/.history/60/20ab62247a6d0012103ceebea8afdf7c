@@ -16,7 +16,7 @@ public abstract class Connection {
     private String mUrl = "";
 	private String mConnectionId = "";
 	private Context mContext;
-	private String mMessageId = null;
+	private String mMessageId;
 	private ITransport mTransport;
 	private final HashSet<String> mGroups = new HashSet<String>();
 	
@@ -34,9 +34,6 @@ public abstract class Connection {
     	synchronized (mStateLock) {
             oldState = mCurrentState;
     		mCurrentState = state;
-    		
-    		if(state.getState() == ConnectionState.Disconnected)
-    			setMessageId(null);
 		}
 
     	// Fire event
