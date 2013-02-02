@@ -1,6 +1,7 @@
 package com.zsoft.SignalA.transport.longpolling;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -15,6 +16,8 @@ import com.zsoft.SignalA.Connection;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
+import com.zsoft.SignalA.Transport.ProcessResult;
+import com.zsoft.SignalA.Transport.TransportHelper;
 
 public class ReconnectingState extends StopableStateWithCallback {
 
@@ -51,7 +54,7 @@ public class ReconnectingState extends StopableStateWithCallback {
 	    
 	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
 		url += "reconnect";
-	    url += GetReceiveQueryString(mConnection);
+	    url += TransportHelper.GetReceiveQueryString(mConnection, null, TRANSPORT_NAME);
 
 		Map<String, Object> params = new HashMap<String, Object>();
 		      
@@ -65,55 +68,17 @@ public class ReconnectingState extends StopableStateWithCallback {
                 {
                     if (json!=null)
                     {
-                    	String newMessageId = null;
-                    	JSONArray messagesArray = null;
-                    	JSONObject transportData = null;
-                        boolean disconnected = false;
-                        boolean timedOut = false;
+                		ProcessResult result = TransportHelper.ProcessResponse(mConnection, json);
 
-            			try {
-            				timedOut = json.optInt("T") == 1;	
-            				disconnected = json.optBoolean("D", false);
-            				newMessageId = json.optString("C");
-            				messagesArray = json.getJSONArray("M");
-//            				transportData = json.getJSONObject("TransportData");
-            			} catch (JSONException e) {
-            				mConnection.OnError(new Exception("Error parsing response."));
-            				return;
-            			}
-
-                        if (disconnected)
-                        {
-    						mConnection.SetNewState(new DisconnectedState(mConnection));
+                		if(result.processingFailed)
+                		{
+                    		mConnection.OnError(new Exception("Error while proccessing response."));
+                		}
+                		else if(result.disconnected)
+                		{
+      						mConnection.SetNewState(new DisconnectedState(mConnection));
     						return;
-                        }
-
-                        if (messagesArray != null)
-                        {
-            				for (int i = 0; i < messagesArray.length(); i++) {
-            					JSONObject m = null;
-								try {
-									m = messagesArray.getJSONObject(i);
-	            					mConnection.OnMessage(m.toString());
-								} catch (JSONException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-            				}
-
-                            mConnection.setMessageId(newMessageId);
-
-                            //var transportData = result["TransportData"] as JObject;
-            		
-                            //if (transportData != null)
-                            //{
-                            //    var groups = (JArray)transportData["Groups"];
-                            //    if (groups != null)
-                            //    {
-                            //        connection.Groups = groups.Select(token => token.Value<string>());
-                            //    }
-                            //}
-                        }
+                		}
                     }
                     else
                     {
@@ -140,24 +105,5 @@ public class ReconnectingState extends StopableStateWithCallback {
 		aq.ajax(cb);
 	}
 
-    protected String GetReceiveQueryString(Connection connection)
-    {
-            // ?transport={0}&connectionId={1}&messageId={2}&groups={3}&connectionData={4}{5}
-		String qs = "?transport=LongPolling";
-		qs += "&connectionId=" + connection.getConnectionId();
-		qs += "&messageId=" + connection.getMessageId();
-
-        //if (connection.Groups != null && connection.Groups.Any())
-        //{
-        //    qsBuilder.Append("&groups=" + Uri.EscapeDataString(JsonConvert.SerializeObject(connection.Groups)));
-        //}
-
-        //if (data != null)
-        //{
-        //    qsBuilder.Append("&connectionData=" + data);
-        //}
-
-        return qs;
-    }
 
 }

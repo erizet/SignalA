@@ -1,0 +1,5 @@
+package com.zsoft.SignalA.Transport;
+
+public class ProcessResult {
+
+}

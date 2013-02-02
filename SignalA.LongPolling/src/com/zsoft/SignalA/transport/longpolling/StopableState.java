@@ -7,6 +7,7 @@ import com.zsoft.SignalA.Transport.StateBase;
 
 public abstract class StopableState extends StateBase {
 	protected AtomicBoolean requestStop = new AtomicBoolean(false);
+    protected final String TRANSPORT_NAME = "LongPolling";
 
 	
 	public StopableState(Connection connection) {

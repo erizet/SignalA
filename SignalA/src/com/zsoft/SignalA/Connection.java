@@ -1,5 +1,10 @@
 package com.zsoft.SignalA;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+
 import com.zsoft.SignalA.Transport.ITransport;
 import com.zsoft.SignalA.Transport.StateBase;
 
@@ -13,7 +18,8 @@ public abstract class Connection {
 	private Context mContext;
 	private String mMessageId;
 	private ITransport mTransport;
-
+	private final HashSet<String> mGroups = new HashSet<String>();
+	
     public Connection(String url, Context context, ITransport transport)
     {
     	mContext = context;
@@ -74,7 +80,29 @@ public abstract class Connection {
 	public void setMessageId(String messageId) {
 		mMessageId = messageId;
 	}
+	
+	public List<String> getGroups()
+	{
+		return new ArrayList<String>(mGroups);
+	}
 
+	public void ResetGroups(Collection<String> groups)
+	{
+		mGroups.clear();
+		mGroups.addAll(groups);
+	}
+	
+	public void ModifyGroups(Collection<String> addedGroups, Collection<String> removedGroups)
+	{
+		if(removedGroups!= null)
+		{
+			mGroups.removeAll(removedGroups);
+		}
+		if(addedGroups!=null)
+		{
+			mGroups.addAll(addedGroups);
+		}
+	}
 	
 	// Methods for the user to implement
 	

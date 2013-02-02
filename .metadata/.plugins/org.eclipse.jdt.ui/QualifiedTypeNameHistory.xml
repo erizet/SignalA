@@ -19,4 +19,11 @@
 <fullyQualifiedTypeName name="com.androidquery.callback.AjaxCallback"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.Transport.ProcessResult"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.Transport.TransportHelper"/>
+<fullyQualifiedTypeName name="android.media.AudioRecord.OnRecordPositionUpdateListener"/>
 </qualifiedTypeNameHistroy>

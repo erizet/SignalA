@@ -3250,3 +3250,18 @@ org.eclipse.core.runtime.AssertionFailedException: unknown saveable: org.eclipse
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 4 2013-02-01 09:46:56.594
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY org.eclipse.mylyn.tasks.ui 2 0 2013-02-01 14:19:51.703
+!MESSAGE Repository link provider took over 5000 ms to execute and was timed out: "[org.tigris.subversion.subclipse.mylyn.SubclipseTaskRepositoryLinkProvider@1d13b8f]"
+!SESSION 2013-02-02 06:14:05.898 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=sv_SE
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-02-02 06:16:07.540
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

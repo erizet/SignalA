@@ -1,0 +1,61 @@
+package com.zsoft.SignalA.Transport;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.List;
+
+import org.json.JSONArray;
+
+import android.util.Log;
+
+import com.zsoft.SignalA.Connection;
+
+public class TransportHelper {
+    private static final String TAG = "TransportHelper";
+
+	protected static String GetReceiveQueryString(Connection connection, String data, String transport)
+    {
+        if (connection == null)
+        {
+            throw new IllegalArgumentException("connection");
+        }
+        if (transport == null)
+        {
+            throw new IllegalArgumentException("transport");
+        }
+
+    	
+        // ?transport={0}&connectionId={1}&messageId={2}&groups={3}&connectionData={4}{5}
+		String qs = "?transport=";
+		qs += transport;
+		qs += "&connectionId=" + connection.getConnectionId();
+		if(connection.getMessageId()!=null)
+		{
+			try {
+				qs += "&messageId=" + URLEncoder.encode(connection.getMessageId(), "utf-8");
+			} catch (UnsupportedEncodingException e) {
+				Log.e(TAG, "Unsupported message encoding error, when encoding messageid.");
+			}
+		}
+
+		List<String> groups = connection.getGroups();
+        if (groups != null && !groups.isEmpty())
+        {
+        	JSONArray jsArray = new JSONArray(groups);
+            try {
+				qs += "&messageId=" + URLEncoder.encode(jsArray.toString(), "utf-8");
+			} catch (UnsupportedEncodingException e) {
+				Log.e(TAG, "Unsupported message encoding error, when encoding groups.");
+			}
+        }
+
+        if (data != null)
+        {
+            qs += "&connectionData=" + data;
+        }
+
+        return qs;
+    }
+
+
+}
