@@ -14,7 +14,7 @@ public abstract class Connection {
 	private Object mStateLock = new Object();
     private StateBase mCurrentState = null;
     private String mUrl = "";
-	private String mConnectionId = null;
+	private String mConnectionId = "";
 	private Context mContext;
 	private String mMessageId = null;
 	private ITransport mTransport;
