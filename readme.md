@@ -61,7 +61,7 @@ Currently is ~~Groups and~~ Hubs not implemented, only PersistentConnection.
 I'll be more than happy to get contributions!!!
 
 ##Are you using SignalA?##
-If you're using SignalA I would appreciate to hear from you - where and how you're usingt it!
+If you're using SignalA I would appreciate to hear from you - where and how are you using it?
 
 ##License##
 
