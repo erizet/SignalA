@@ -47,14 +47,17 @@ public class ConnectingState extends StopableStateWithCallback {
 
 					if(json != null){
 						String connectionId="";
+						String connectionToken="";
 						String protocolVersion = "";
 						try {
 							connectionId = json.getString("ConnectionId");
+							connectionToken = json.getString("ConnectionToken");
 							protocolVersion = json.getString("ProtocolVersion");
 	
 							if(mConnection.VerifyProtocolVersion(protocolVersion))
 							{
 								mConnection.setConnectionId(connectionId);
+								mConnection.setConnectionToken(connectionToken);
 								mConnection.SetNewState(new ConnectedState(mConnection));
 								return;
 							}

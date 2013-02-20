@@ -1,5 +1,7 @@
 package com.zsoft.SignalA.transport.longpolling;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,7 +46,12 @@ public class DisconnectingState extends StateBase {
 	@Override
 	protected void OnRun() {
 		AQuery aq = new AQuery(mConnection.getContext());
-	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") +  "abort?transport=LongPolling&connectionId=" + mConnection.getConnectionId();
+	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
+		try {
+			url += "abort?transport=LongPolling&connectionToken=" + URLEncoder.encode(mConnection.getConnectionToken(), "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
+		}
 
 		AjaxCallback<String> cb = new AjaxCallback<String>() {
 			@Override

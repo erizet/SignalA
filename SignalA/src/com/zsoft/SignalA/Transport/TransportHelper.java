@@ -102,10 +102,14 @@ public class TransportHelper {
         }
 
     	
-        // ?transport={0}&connectionId={1}&messageId={2}&groups={3}&connectionData={4}{5}
+        // ?transport={0}&connectionToken={1}&messageId={2}&groups={3}&connectionData={4}{5}
 		String qs = "?transport=";
 		qs += transport;
-		qs += "&connectionId=" + connection.getConnectionId();
+		try {
+			qs += "&connectionToken=" + URLEncoder.encode(connection.getConnectionToken(), "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
+		}
 		if(connection.getMessageId()!=null)
 		{
 			try {

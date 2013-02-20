@@ -15,6 +15,7 @@ public abstract class Connection {
     private StateBase mCurrentState = null;
     private String mUrl = "";
 	private String mConnectionId = null;
+	private String mConnectionToken = null;
 	private Context mContext;
 	private String mMessageId = null;
 	private ITransport mTransport;
@@ -36,7 +37,10 @@ public abstract class Connection {
     		mCurrentState = state;
     		
     		if(state.getState() == ConnectionState.Disconnected)
+    		{
     			setConnectionId(null);
+    			setConnectionToken(null);
+    		}
 		}
 
     	// Fire event
@@ -65,6 +69,14 @@ public abstract class Connection {
 		mConnectionId = connectionId;
 	}
 
+	public String getConnectionToken() {
+		return mConnectionToken;
+	}
+	
+	public void setConnectionToken(String connectionToken) {
+		mConnectionToken = connectionToken;
+	}
+
 	public StateBase getCurrentState()
 	{
     	synchronized (mStateLock) {
@@ -73,7 +85,7 @@ public abstract class Connection {
 	}
 	
 	public boolean VerifyProtocolVersion(String protocolVersion) {
-		return protocolVersion.compareTo("1.1") == 0;
+		return protocolVersion.compareTo("1.2") == 0;
 	}
 
 	public String getMessageId() {
