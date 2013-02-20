@@ -3,6 +3,12 @@
 
 #SignalA#
 
+##Updates##
+
+###2013-02-20 version 0.9beta released###
+Version 0.9beta uses the SignalR-protocol version 1.2 which is used in the 1.0 release of SignalR.
+It has also (beta)support for groups.
+
 ##Description##
 SignalA is a [SignalR][sr]-client for Android. It's implemented as a Android-library. At this moment is long polling the only implemented transport. Long polling is a separate library.
 Http-requests in the Long polling library is using [Android-query][aq].
@@ -49,10 +55,13 @@ That's it!
 For a complete sample see the Demo-project.
 
 ##Limitations##
-Currently is Groups and Hubs not implemented, only PersistentConnection. 
+Currently is ~~Groups and~~ Hubs not implemented, only PersistentConnection. 
 
 ##Contributions##
 I'll be more than happy to get contributions!!!
+
+##Are you using SignalA?##
+If you're using SignalA I would appreciate to hear from you - where and how you're usingt it!
 
 ##License##
 
