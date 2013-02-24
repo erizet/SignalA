@@ -101,7 +101,7 @@ public abstract class Connection {
 		return mGroupsToken;
 	}
 
-	public void setGroupsToken(String groupsToken)
+	public String setGroupsToken(String groupsToken)
 	{
 		mGroupsToken = groupsToken;
 	}

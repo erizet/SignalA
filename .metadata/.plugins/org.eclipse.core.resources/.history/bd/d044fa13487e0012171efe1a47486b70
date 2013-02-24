@@ -32,7 +32,9 @@ public class TransportHelper {
 
     	String newMessageId = null;
     	JSONArray messagesArray = null;
-    	String groupsToken = null;
+    	JSONArray resetGroups = null;
+    	JSONArray addedGroups = null;
+    	JSONArray removedGroups = null;
     	JSONObject transportData = null;
     	JSONObject info = null;
 
@@ -40,7 +42,9 @@ public class TransportHelper {
 		result.disconnected = response.optInt("D") == 1;
 		newMessageId = response.optString("C");
 		messagesArray = response.optJSONArray("M");
-		groupsToken = response.optString("G");
+		resetGroups = response.optJSONArray("R");
+		addedGroups = response.optJSONArray("G");
+		removedGroups = response.optJSONArray("g");
 		info = response.optJSONObject("I");
 
 		if(info != null)
@@ -56,9 +60,13 @@ public class TransportHelper {
 			return result;
 		}			
 		
-		if(groupsToken!=null)
+		if(resetGroups!=null)
 		{
-			connection.setGroupsToken(groupsToken);
+			connection.ResetGroups(TransportHelper.ToArrayList(resetGroups));
+		}
+		else
+		{
+			connection.ModifyGroups(TransportHelper.ToArrayList(addedGroups), TransportHelper.ToArrayList(removedGroups));
 		}
 
         if (messagesArray != null)
@@ -94,7 +102,7 @@ public class TransportHelper {
         }
 
     	
-        // ?transport={0}&connectionToken={1}&messageId={2}&groupsToken={3}&connectionData={4}{5}
+        // ?transport={0}&connectionToken={1}&messageId={2}&groups={3}&connectionData={4}{5}
 		String qs = "?transport=";
 		qs += transport;
 		try {
@@ -111,12 +119,14 @@ public class TransportHelper {
 			}
 		}
 
-        if (connection.getGroupsToken() != null)
+		List<String> groups = connection.getGroups();
+        if (groups != null && !groups.isEmpty())
         {
+        	JSONArray jsArray = new JSONArray(groups);
             try {
-				qs += "&groupsToken=" + URLEncoder.encode(connection.getGroupsToken(), "utf-8");
+				qs += "&messageId=" + URLEncoder.encode(jsArray.toString(), "utf-8");
 			} catch (UnsupportedEncodingException e) {
-				Log.e(TAG, "Unsupported message encoding error, when encoding groupsToken.");
+				Log.e(TAG, "Unsupported message encoding error, when encoding groups.");
 			}
         }
 

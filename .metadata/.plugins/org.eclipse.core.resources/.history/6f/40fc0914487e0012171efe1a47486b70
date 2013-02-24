@@ -19,7 +19,7 @@ public abstract class Connection {
 	private Context mContext;
 	private String mMessageId = null;
 	private ITransport mTransport;
-	private String mGroupsToken = null;
+	private final HashSet<String> mGroups = new HashSet<String>();
 	
     public Connection(String url, Context context, ITransport transport)
     {
@@ -96,16 +96,28 @@ public abstract class Connection {
 		mMessageId = messageId;
 	}
 	
-	public String getGroupsToken()
+	public List<String> getGroups()
 	{
-		return mGroupsToken;
+		return new ArrayList<String>(mGroups);
 	}
 
-	public void setGroupsToken(String groupsToken)
+	public void ResetGroups(Collection<String> groups)
 	{
-		mGroupsToken = groupsToken;
+		mGroups.clear();
+		mGroups.addAll(groups);
 	}
 	
+	public void ModifyGroups(Collection<String> addedGroups, Collection<String> removedGroups)
+	{
+		if(removedGroups!= null)
+		{
+			mGroups.removeAll(removedGroups);
+		}
+		if(addedGroups!=null)
+		{
+			mGroups.addAll(addedGroups);
+		}
+	}
 	
 	// Methods for the user to implement
 	
