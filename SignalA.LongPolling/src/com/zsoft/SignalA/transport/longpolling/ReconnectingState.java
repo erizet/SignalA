@@ -10,7 +10,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.Constants;
-import com.zsoft.SignalA.Connection;
+import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
@@ -19,7 +19,7 @@ import com.zsoft.SignalA.Transport.TransportHelper;
 
 public class ReconnectingState extends StopableStateWithCallback {
 
-	public ReconnectingState(Connection connection) {
+	public ReconnectingState(ConnectionBase connection) {
 		super(connection);
 	}
 
@@ -70,7 +70,7 @@ public class ReconnectingState extends StopableStateWithCallback {
 
                 		if(result.processingFailed)
                 		{
-                    		mConnection.OnError(new Exception("Error while proccessing response."));
+                    		mConnection.setError(new Exception("Error while proccessing response."));
                 		}
                 		else if(result.disconnected)
                 		{
@@ -80,7 +80,7 @@ public class ReconnectingState extends StopableStateWithCallback {
                     }
                     else
                     {
-					    mConnection.OnError(new Exception("Error when calling endpoint. Returncode: " + status.getCode()));
+					    mConnection.setError(new Exception("Error when calling endpoint. Returncode: " + status.getCode()));
                     }
                 }
                 finally

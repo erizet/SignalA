@@ -2,7 +2,7 @@ package com.zsoft.SignalA.transport.longpolling;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.zsoft.SignalA.Connection;
+import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.Transport.StateBase;
 
 public abstract class StopableState extends StateBase {
@@ -10,7 +10,7 @@ public abstract class StopableState extends StateBase {
     protected final String TRANSPORT_NAME = "LongPolling";
 
 	
-	public StopableState(Connection connection) {
+	public StopableState(ConnectionBase connection) {
 		super(connection);
 	}
 

@@ -3,7 +3,6 @@ package com.zsoft.SignalA.Transport;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,12 +10,12 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-import com.zsoft.SignalA.Connection;
+import com.zsoft.SignalA.ConnectionBase;
 
 public class TransportHelper {
     private static final String TAG = "TransportHelper";
 
-    public static ProcessResult ProcessResponse(Connection connection, JSONObject response)
+    public static ProcessResult ProcessResponse(ConnectionBase connection, JSONObject response)
     {
     	ProcessResult result = new ProcessResult();
     	
@@ -67,7 +66,7 @@ public class TransportHelper {
 				//JSONObject m = null;
 				try {
 					String m = messagesArray.getString(i); //.getJSONObject(i);
-					connection.OnMessage(m.toString());
+					connection.setMessage(m.toString());
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -82,7 +81,7 @@ public class TransportHelper {
 
     
     
-	public static String GetReceiveQueryString(Connection connection, String data, String transport)
+	public static String GetReceiveQueryString(ConnectionBase connection, String data, String transport)
     {
         if (connection == null)
         {

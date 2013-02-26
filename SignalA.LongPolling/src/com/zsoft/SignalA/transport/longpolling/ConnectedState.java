@@ -13,7 +13,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.Constants;
-import com.zsoft.SignalA.Connection;
+import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
@@ -23,10 +23,11 @@ import com.zsoft.SignalA.Transport.TransportHelper;
 public class ConnectedState extends StopableStateWithCallback {
 	protected static final String TAG = "ConnectedState";
 	private Object mCallbackLock = new Object();
+	@SuppressWarnings("unused")
 	private AjaxCallback<JSONObject> mCurrentCallback = null;
 	private boolean mUseConnect = true;
 	
-	public ConnectedState(Connection connection) {
+	public ConnectedState(ConnectionBase connection) {
 		super(connection);
 	}
 
@@ -72,7 +73,7 @@ public class ConnectedState extends StopableStateWithCallback {
 				else
 				{
 					Exception ex = new Exception("Error sending message");
-					mConnection.OnError(ex);
+					mConnection.setError(ex);
 					sendCb.OnError(ex);
 				}
 			}
@@ -124,7 +125,7 @@ public class ConnectedState extends StopableStateWithCallback {
 
                 		if(result.processingFailed)
                 		{
-                    		mConnection.OnError(new Exception("Error while proccessing response."));
+                    		mConnection.setError(new Exception("Error while proccessing response."));
                     		mConnection.SetNewState(new ReconnectingState(mConnection));
                 		}
                 		else if(result.disconnected)
@@ -135,7 +136,7 @@ public class ConnectedState extends StopableStateWithCallback {
                     }
                     else
                     {
-					    mConnection.OnError(new Exception("Error when calling endpoint. Returncode: " + status.getCode()));
+					    mConnection.setError(new Exception("Error when calling endpoint. Returncode: " + status.getCode()));
 						mConnection.SetNewState(new ReconnectingState(mConnection));
                     }
                 }

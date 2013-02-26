@@ -1,0 +1,7 @@
+package com.zsoft.SignalA.Hubs;
+
+import ConnectionBase;
+
+public class HubConnection extends ConnectionBase {
+
+}

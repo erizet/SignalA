@@ -6,13 +6,13 @@ import org.json.JSONObject;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
-import com.zsoft.SignalA.Connection;
+import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
 
 public class ConnectingState extends StopableStateWithCallback {
-	public ConnectingState(Connection connection) {
+	public ConnectingState(ConnectionBase connection) {
 		super(connection);
 	}
 
@@ -63,13 +63,13 @@ public class ConnectingState extends StopableStateWithCallback {
 							}
 							else
 							{
-								mConnection.OnError(new Exception("Not supported protocol version."));
+								mConnection.setError(new Exception("Not supported protocol version."));
 								mConnection.SetNewState(new DisconnectedState(mConnection));
 								return;
 							}
 						
 						} catch (JSONException e) {
-							mConnection.OnError(new Exception("Unable to parse negotiation response."));
+							mConnection.setError(new Exception("Unable to parse negotiation response."));
 							return;
 						}
 					}

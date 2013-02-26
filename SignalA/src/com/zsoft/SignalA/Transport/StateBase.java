@@ -2,15 +2,15 @@ package com.zsoft.SignalA.Transport;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.zsoft.SignalA.Connection;
+import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SendCallback;
 
 public abstract class StateBase {
-    protected Connection mConnection;
+    protected ConnectionBase mConnection;
     protected AtomicBoolean mIsRunning = new AtomicBoolean(false);
     
-    public StateBase(Connection connection)
+    public StateBase(ConnectionBase connection)
     {
         mConnection = connection;
     }

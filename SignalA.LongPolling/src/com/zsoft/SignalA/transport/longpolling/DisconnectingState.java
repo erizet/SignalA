@@ -11,7 +11,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.Constants;
-import com.zsoft.SignalA.Connection;
+import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.Transport.StateBase;
@@ -21,7 +21,7 @@ public class DisconnectingState extends StateBase {
 
 	protected static final String TAG = "DisconnectingState";
 
-	public DisconnectingState(Connection connection) {
+	public DisconnectingState(ConnectionBase connection) {
 		super(connection);
 	}
 
