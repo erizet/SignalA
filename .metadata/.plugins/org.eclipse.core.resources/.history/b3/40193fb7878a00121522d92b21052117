@@ -1,0 +1,26 @@
+package com.zsoft.SignalA.Hubs;
+
+import org.json.JSONObject;
+
+public class HubProxy implements IHubProxy {
+
+	public HubProxy(HubConnection hubConnection, String hubName) {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	// Executes a method on the server asynchronously
+	@Override
+	public void Invoke(String method, JSONObject args,
+			HubInvokeCallback callback) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void On(String eventName, HubOnDataCallback callback) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

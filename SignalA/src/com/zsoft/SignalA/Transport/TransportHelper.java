@@ -46,7 +46,7 @@ public class TransportHelper {
 		{
 			
 			// ToDo
-			//connection.OnReceive(response);
+			connection.setMessage(response);
 			return result;
 		}
 		

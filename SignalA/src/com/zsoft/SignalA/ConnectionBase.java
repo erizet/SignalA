@@ -1,5 +1,7 @@
 package com.zsoft.SignalA;
 
+import org.json.JSONObject;
+
 import com.zsoft.SignalA.Transport.ITransport;
 import com.zsoft.SignalA.Transport.StateBase;
 
@@ -105,7 +107,12 @@ public abstract class ConnectionBase {
 	{
 		OnMessage(message);
 	}
-	
+
+	public void setMessage(JSONObject response) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public void setError(Exception exception)
 	{
 		OnError(exception);
@@ -116,6 +123,10 @@ public abstract class ConnectionBase {
 	protected abstract void OnError(Exception exception);
 	protected abstract void OnMessage(String message);
 	protected abstract void OnStateChanged(StateBase oldState, StateBase newState);
+	protected String OnSending()
+	{
+		return null;
+	}
 
 	public void Start() {
 		getCurrentState().Start();
@@ -128,6 +139,7 @@ public abstract class ConnectionBase {
 	public void Send(CharSequence text, SendCallback callback) {
 		getCurrentState().Send(text, callback);
 	}
+
 
 
     

@@ -1,0 +1,17 @@
+package com.zsoft.SignalA.Hubs;
+
+import org.json.JSONObject;
+
+public class HubInvocation {
+
+	private String mHubName;
+
+	public HubInvocation(JSONObject message) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getHubName() {
+		return mHubName;
+	}
+
+}
