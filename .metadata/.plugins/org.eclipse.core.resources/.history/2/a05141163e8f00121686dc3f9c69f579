@@ -63,23 +63,12 @@ public class ConnectedState extends StopableStateWithCallback {
 			Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
 		}
 
-	    AjaxCallback<JSONObject> cb = new AjaxCallback<JSONObject>() {
+	    AjaxCallback<String> cb = new AjaxCallback<String>() {
 			@Override
-			public void callback(String url, JSONObject json, AjaxStatus status) {
+			public void callback(String url, String result, AjaxStatus status) {
 				if(status.getCode() == 200){
 					Log.v(TAG, "Message sent: " + text);
-					ProcessResult result = TransportHelper.ProcessResponse(mConnection, json);
-
-            		if(result.processingFailed)
-            		{
-    					Exception ex = new Exception("Error processing respone after sending.");
-    					mConnection.setError(ex);
-    					sendCb.OnError(ex);
-            		}
-            		else
-            		{
-            			sendCb.OnSent(text);
-            		}
+					sendCb.OnSent(text);
 				}
 				else
 				{
@@ -93,7 +82,7 @@ public class ConnectedState extends StopableStateWithCallback {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("data", text);
 		
-		cb.url(url).type(JSONObject.class).expire(-1).params(params).method(Constants.METHOD_POST);
+		cb.url(url).type(String.class).expire(-1).params(params).method(Constants.METHOD_POST);
 		aq.ajax(cb);
 	}
 
