@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="com.androidquery.AQuery"/>
 <fullyQualifiedTypeName name="com.androidquery.util.AQUtility"/>
 <fullyQualifiedTypeName name="java.io.CharConversionException"/>
-<fullyQualifiedTypeName name="com.zsoft.SignalA.SendCallback"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalADemo.DemoActivity"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.lang.CharSequence"/>
@@ -31,10 +30,13 @@
 <fullyQualifiedTypeName name="android.R.bool"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubConnection"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.Subscription"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubProxy"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.SendCallback"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
 </qualifiedTypeNameHistroy>

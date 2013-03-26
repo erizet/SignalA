@@ -1,5 +1,7 @@
 package com.zsoft.SignalA.Hubs;
 
+import java.util.Collection;
+
 import org.json.JSONObject;
 
 /// <summary>
@@ -8,7 +10,7 @@ import org.json.JSONObject;
 public interface IHubProxy {
 	
 	//void On(String eventName, OnDataCallback callback);
-	void Invoke(String method, JSONObject args, HubInvokeCallback callback);
+	void Invoke(String method, Collection<?> args, HubInvokeCallback callback);
 	
         //JToken this[String name] { get; set; }
 }

@@ -1,14 +1,18 @@
 package com.zsoft.SignalA.Hubs;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.zsoft.SignalA.SendCallback;
 
 public class HubProxy implements IHubProxy {
-    private String mHubName;
+    protected static final String TAG = "HubProxy";
+	private String mHubName;
     private HubConnection mConnection;
     //private Map<string, JSONObject> _state = new Dictionary<string, JToken>(StringComparer.OrdinalIgnoreCase);
     private Map<String, HubOnDataCallback> mSubscriptions = new HashMap<String, HubOnDataCallback>();
@@ -21,7 +25,7 @@ public class HubProxy implements IHubProxy {
 	
 	// Executes a method on the server asynchronously
 	@Override
-	public void Invoke(String method, JSONObject args,
+	public void Invoke(final String method, Collection<?> args,
 			HubInvokeCallback callback) {
 
 		if (method == null)
@@ -34,7 +38,7 @@ public class HubProxy implements IHubProxy {
             throw new IllegalArgumentException("args");
         }
 
-        String callbackId = mConnection.RegisterCallback(callback);
+        final String callbackId = mConnection.RegisterCallback(callback);
 
         HubInvocation hubData = new HubInvocation(mHubName, method, args, callbackId);
 
@@ -44,14 +48,16 @@ public class HubProxy implements IHubProxy {
         {
 			@Override
 			public void OnSent(CharSequence messageSent) {
-				// TODO Auto-generated method stub
-				
+				Log.v(TAG, "Invoke of " + method + "sent to " + mHubName);
+				// callback.OnSent() ??!?!?
 			}
 
 			@Override
 			public void OnError(Exception ex) {
 				// TODO Cancel the callback
-				
+				Log.e(TAG, "Faile to invoke " + method + "on " + mHubName);
+				mConnection.RemoveCallback(callbackId);
+				// callback.OnError() ?!?!?
 			}
         });
     }

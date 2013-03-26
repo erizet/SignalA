@@ -1,0 +1,46 @@
+package com.zsoft.hubdemo;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.widget.Toast;
+
+public class MainActivity extends FragmentActivity implements ConnectionFragment.OnConnectionRequestedListener,
+	CalculatorFragment.OnCalculationRequestedListener
+{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public void ConnectionRequested(Uri address) {
+		CalculatorFragment fragment = new CalculatorFragment();
+		getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+	}
+
+	@Override
+	public void calculate(int value1, int value2, String operator) {
+		int answer = operator.equalsIgnoreCase("Plus") ? value1+value2 : value1-value2;
+			
+		StringBuilder sb = new StringBuilder();
+		sb.append(value1);
+		sb.append(operator=="plus" ? "+":"-");
+		sb.append(value2);
+		sb.append(" = ");
+		sb.append(answer);
+		
+		Toast.makeText(MainActivity.this, sb.toString(), Toast.LENGTH_SHORT).show();
+	}
+
+}

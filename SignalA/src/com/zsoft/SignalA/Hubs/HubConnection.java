@@ -121,7 +121,22 @@ public class HubConnection extends com.zsoft.SignalA.ConnectionBase {
             mCallbackId++;
             return id;
         }
-
+	}
+	
+	public boolean RemoveCallback(final String callbackId)
+	{
+        synchronized (mCallbacks) {
+            if(mCallbacks.containsKey(callbackId))
+            {
+            	mCallbacks.remove(callbackId);
+            	return true;
+            }
+            else
+            {
+            	Log.d(TAG, "Callback with id " + callbackId + " not found!");
+            }
+        }
+        return false;
 	}
 	
 	

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HubDemo</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="status">Connection status</string>
+    <string name="calculate">Calculate</string>
+    <string name="value2">Value2</string>
+
+</resources>
