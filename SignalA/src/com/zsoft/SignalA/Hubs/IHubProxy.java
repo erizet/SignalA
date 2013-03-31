@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public interface IHubProxy {
 	
 	//void On(String eventName, OnDataCallback callback);
-	void Invoke(String method, Collection<?> args, HubInvokeCallback callback);
+	public void Invoke(String method, Collection<?> args, HubInvokeCallback callback);
 	
         //JToken this[String name] { get; set; }
 }

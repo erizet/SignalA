@@ -13,6 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/status" />
+     <TextView
+        android:id="@+id/connection_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
     
     <LinearLayout
         android:id="@+id/fragment_container"

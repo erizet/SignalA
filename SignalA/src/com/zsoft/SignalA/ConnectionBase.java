@@ -123,7 +123,7 @@ public abstract class ConnectionBase {
 	protected abstract void OnError(Exception exception);
 	protected abstract void OnMessage(String message);
 	protected abstract void OnStateChanged(StateBase oldState, StateBase newState);
-	protected String OnSending()
+	public String OnSending()
 	{
 		return null;
 	}

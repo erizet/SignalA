@@ -120,9 +120,8 @@ public class ConnectedState extends StopableStateWithCallback {
 	    
 //	    url += TransportHelper.GetReceiveQueryString(mConnection, null, TRANSPORT_NAME);
 		// Todo: lägg till connectionData här istf null. SKa komma från OnSending i ConnectionBase...
-		
-		
-	    url += TransportHelper.GetReceiveQueryString(mConnection, null, TRANSPORT_NAME);
+		String connectionData = mConnection.OnSending();
+	    url += TransportHelper.GetReceiveQueryString(mConnection, connectionData, TRANSPORT_NAME);
 
 		Map<String, Object> params = new HashMap<String, Object>();
 		      

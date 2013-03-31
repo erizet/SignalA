@@ -25,7 +25,7 @@ public class HubConnection extends com.zsoft.SignalA.ConnectionBase {
 
 	public HubConnection(String url, Context context, ITransport transport) {
 		super(url, context, transport);
-		// TODO Auto-generated constructor stub
+		setUrl(GetUrl(url, true));
 	}
 
 	@Override
@@ -158,14 +158,14 @@ public class HubConnection extends com.zsoft.SignalA.ConnectionBase {
 	
 	// return the connectiondata....[{"Name":"chat"}]
 	@Override
-	protected String OnSending()
+	public String OnSending()
 	{
 		JSONArray arr = new JSONArray();
 		for (Entry<String, HubProxy> entry : mHubs.entrySet())
 		{
 		    JSONObject jsonObj= new JSONObject();
 		    try {
-				jsonObj.put("Name", entry.getKey());
+				jsonObj.put("name", entry.getKey());
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
