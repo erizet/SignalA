@@ -1,7 +1,0 @@
-package com.zsoft.SignalA.Hubs;
-
-import org.json.JSONObject;
-
-public abstract class HubOnDataCallback {
-	public abstract void OnData(JSONObject data);
-}
