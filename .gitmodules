@@ -1,0 +1,3 @@
+[submodule "basic-http-client"]
+	path = basic-http-client
+	url = https://code.google.com/p/basic-http-client/
