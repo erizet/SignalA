@@ -2,8 +2,6 @@ package com.zsoft.SignalA.Hubs;
 
 import java.util.Collection;
 
-import org.json.JSONObject;
-
 /// <summary>
 ///  A client side proxy for a server side hub.
 /// </summary>

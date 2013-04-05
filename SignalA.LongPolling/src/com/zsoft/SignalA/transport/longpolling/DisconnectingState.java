@@ -2,15 +2,12 @@ package com.zsoft.SignalA.transport.longpolling;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Map;
 
 import android.util.Log;
 
-import com.androidquery.AQuery;
-import com.androidquery.callback.AjaxCallback;
-import com.androidquery.callback.AjaxStatus;
-import com.androidquery.util.Constants;
+import com.turbomanage.httpclient.AsyncCallback;
+import com.turbomanage.httpclient.HttpResponse;
+import com.turbomanage.httpclient.android.AndroidHttpClient;
 import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
@@ -45,7 +42,6 @@ public class DisconnectingState extends StateBase {
 	
 	@Override
 	protected void OnRun() {
-		AQuery aq = new AQuery(mConnection.getContext());
 	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
 		try {
 			url += "abort?transport=LongPolling&connectionToken=" + URLEncoder.encode(mConnection.getConnectionToken(), "utf-8");
@@ -53,20 +49,29 @@ public class DisconnectingState extends StateBase {
 			Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
 		}
 
-		AjaxCallback<String> cb = new AjaxCallback<String>() {
+		AsyncCallback cb = new AsyncCallback() {
+			
 			@Override
-			public void callback(String url, String result, AjaxStatus status) {
-				if(result == null){
-					Log.e(TAG, "Clean disconnect failed. " + status.getCode());
+			public void onComplete(HttpResponse httpResponse) {
+				
+				if(httpResponse.getStatus() != 200 || httpResponse.getBodyAsString() == null || httpResponse.getBodyAsString().isEmpty())
+				{
+					Log.e(TAG, "Clean disconnect failed. " + httpResponse.getStatus());
 				}
 				
 				mConnection.SetNewState(new DisconnectedState(mConnection));
 			}
+
+	        @Override
+	        public void onError(Exception ex) {
+				mConnection.setError(ex);
+				mConnection.SetNewState(new DisconnectedState(mConnection));
+	        }
 		};
-		
-		Map<String, Object> params = new HashMap<String, Object>();
-		cb.url(url).type(String.class).expire(-1).params(params).method(Constants.METHOD_POST); //.timeout(5000);
-		aq.ajax(cb);
+
+		AndroidHttpClient httpClient = new AndroidHttpClient();
+		httpClient.setMaxRetries(1);
+		httpClient.post(url, null, cb);
 	}
 
 }

@@ -7372,3 +7372,21 @@ org.eclipse.core.internal.resources.ResourceException: Marker id 1936 not found.
 
 !ENTRY org.eclipse.jdt.debug.ui 4 4 2013-03-30 07:45:01.219
 !MESSAGE Marker id 1936 not found.
+!SESSION 2013-04-05 02:07:14.269 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=sv_SE
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-04-05 02:19:21.121
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project HubDemo
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-04-05 02:19:21.211
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project SignalA
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-04-05 02:19:21.217
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project SignalA.LongPolling
+
+!ENTRY org.eclipse.ui 4 4 2013-04-05 02:23:40.836
+!MESSAGE Invalid preference page path: XML Syntax

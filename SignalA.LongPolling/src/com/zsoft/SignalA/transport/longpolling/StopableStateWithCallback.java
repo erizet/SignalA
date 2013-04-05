@@ -1,13 +1,10 @@
 package com.zsoft.SignalA.transport.longpolling;
 
-import org.json.JSONObject;
-
-import com.androidquery.callback.AjaxCallback;
 import com.zsoft.SignalA.ConnectionBase;
 
 public abstract class StopableStateWithCallback extends StopableState {
 	protected Object mCallbackLock = new Object();
-	protected AjaxCallback<JSONObject> mCurrentCallback = null;
+	//protected AjaxCallback<JSONObject> mCurrentCallback = null;
 	
 	public StopableStateWithCallback(ConnectionBase connection) {
 		super(connection);
@@ -17,8 +14,8 @@ public abstract class StopableStateWithCallback extends StopableState {
 	public void Stop() {
 		requestStop.set(true);
 		synchronized (mCallbackLock) {
-			if(mCurrentCallback!=null)
-				mCurrentCallback.abort();
+//			if(mCurrentCallback!=null)
+//				mCurrentCallback.abort();
 		}
 		Run();	
 	}

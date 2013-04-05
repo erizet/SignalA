@@ -3,9 +3,9 @@ package com.zsoft.SignalA.transport.longpolling;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.androidquery.AQuery;
-import com.androidquery.callback.AjaxCallback;
-import com.androidquery.callback.AjaxStatus;
+import com.turbomanage.httpclient.AsyncCallback;
+import com.turbomanage.httpclient.HttpResponse;
+import com.turbomanage.httpclient.android.AndroidHttpClient;
 import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
@@ -32,20 +32,22 @@ public class ConnectingState extends StopableStateWithCallback {
 
 	@Override
 	protected void OnRun() {
-		AQuery aq = new AQuery(mConnection.getContext());
-		
 		if(DoStop()) return; 
 
         // negotiate
 		String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") + "negotiate";
-		AjaxCallback<JSONObject> cb = new AjaxCallback<JSONObject>() {
+		AsyncCallback cb = new AsyncCallback() {
+			
 			@Override
-			public void callback(String url, JSONObject json, AjaxStatus status) {
+			public void onComplete(HttpResponse httpResponse) {
 				try
 				{
 					if(DoStop()) return; 
 
-					if(json != null){
+					
+					if(httpResponse.getStatus()==200 && !httpResponse.getBodyAsString().isEmpty())
+					{
+						JSONObject json = JSONHelper.ToJSONObject(httpResponse.getBodyAsString());
 						String connectionId="";
 						String connectionToken="";
 						String protocolVersion = "";
@@ -83,14 +85,20 @@ public class ConnectingState extends StopableStateWithCallback {
 					mIsRunning.set(false);
 				}
 			}
+            @Override
+            public void onError(Exception ex) {
+				mConnection.setError(ex);
+				mConnection.SetNewState(new DisconnectedState(mConnection));
+            }
 		};
 		
 		synchronized (mCallbackLock) {
-			mCurrentCallback = cb;
+			//mCurrentCallback = cb;
 		}
-		//cb.timeout(10000);
-		aq.ajax(url, JSONObject.class, cb);
-
+		
+		AndroidHttpClient httpClient = new AndroidHttpClient();
+        httpClient.setMaxRetries(1);
+        httpClient.get(url, null, cb);
 	}
 
 }

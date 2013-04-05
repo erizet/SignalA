@@ -1,15 +1,10 @@
 package com.zsoft.SignalA.transport.longpolling;
 
-import java.util.HashMap;
-
-import java.util.Map;
-
 import org.json.JSONObject;
 
-import com.androidquery.AQuery;
-import com.androidquery.callback.AjaxCallback;
-import com.androidquery.callback.AjaxStatus;
-import com.androidquery.util.Constants;
+import com.turbomanage.httpclient.AsyncCallback;
+import com.turbomanage.httpclient.HttpResponse;
+import com.turbomanage.httpclient.android.AndroidHttpClient;
 import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
@@ -39,8 +34,6 @@ public class ReconnectingState extends StopableStateWithCallback {
 
 	@Override
 	protected void OnRun() {
-		AQuery aq = new AQuery(mConnection.getContext());
-		
 		if(DoStop()) return; 
 
 	    if (mConnection.getMessageId() == null)
@@ -54,33 +47,39 @@ public class ReconnectingState extends StopableStateWithCallback {
 		url += "reconnect";
 	    url += TransportHelper.GetReceiveQueryString(mConnection, null, TRANSPORT_NAME);
 
-		Map<String, Object> params = new HashMap<String, Object>();
-		      
-		AjaxCallback<JSONObject> cb = new AjaxCallback<JSONObject>()
-		{
+		AsyncCallback cb = new AsyncCallback() {
+			
 			@Override
-			public void callback(String url, JSONObject json, AjaxStatus status) {
+			public void onComplete(HttpResponse httpResponse) {
 				if(DoStop()) return; 
 
                 try
                 {
-                    if (json!=null)
-                    {
-                		ProcessResult result = TransportHelper.ProcessResponse(mConnection, json);
-
-                		if(result.processingFailed)
-                		{
-                    		mConnection.setError(new Exception("Error while proccessing response."));
-                		}
-                		else if(result.disconnected)
-                		{
-      						mConnection.SetNewState(new DisconnectedState(mConnection));
-    						return;
-                		}
+                	if(httpResponse.getStatus()==200)
+                	{
+                		JSONObject json = JSONHelper.ToJSONObject(httpResponse.getBodyAsString());
+	                    if (json!=null)
+	                    {
+	                		ProcessResult result = TransportHelper.ProcessResponse(mConnection, json);
+	
+	                		if(result.processingFailed)
+	                		{
+	                    		mConnection.setError(new Exception("Error while proccessing response."));
+	                		}
+	                		else if(result.disconnected)
+	                		{
+	      						mConnection.SetNewState(new DisconnectedState(mConnection));
+	    						return;
+	                		}
+	                    }
+	                    else
+	                    {
+						    mConnection.setError(new Exception("Error when parsing response to JSONObject."));
+	                    }
                     }
                     else
                     {
-					    mConnection.setError(new Exception("Error when calling endpoint. Returncode: " + status.getCode()));
+					    mConnection.setError(new Exception("Error when calling endpoint. Returncode: " + httpResponse.getStatus()));
                     }
                 }
                 finally
@@ -92,15 +91,21 @@ public class ReconnectingState extends StopableStateWithCallback {
 						Run();
                 }
 			}
+           @Override
+            public void onError(Exception ex) {
+				mConnection.setError(ex);
+				mConnection.SetNewState(new DisconnectedState(mConnection));
+			}
 		};
 
 		
 		synchronized (mCallbackLock) {
-			mCurrentCallback = cb;
+			//mCurrentCallback = cb;
 		}
-		//aq.ajax(url, JSONObject.class, cb);
-		cb.url(url).type(JSONObject.class).expire(-1).params(params).method(Constants.METHOD_POST);
-		aq.ajax(cb);
+
+		AndroidHttpClient httpClient = new AndroidHttpClient();
+        httpClient.setMaxRetries(1);
+        httpClient.post(url, null, cb);
 	}
 
 

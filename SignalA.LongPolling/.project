@@ -32,9 +32,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Aquery</name>
+			<name>httpclient-src</name>
 			<type>2</type>
-			<location>C:/Users/Erik/Documents/GitHub/androidquery/src</location>
+			<location>D:/Android/SignalA/basic-http-client/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>
