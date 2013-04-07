@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.util.Log;
@@ -83,7 +82,7 @@ public class HubProxy implements IHubProxy {
 	}
 	
 	// Kör event lokalt som anropas från servern och som registrerats i ON-metod.
-    public void InvokeEvent(String eventName, JSONArray args)
+    public void InvokeEvent(String eventName, JSONObject args)
     {
         HubOnDataCallback subscription;
         if(mSubscriptions.containsKey(eventName))

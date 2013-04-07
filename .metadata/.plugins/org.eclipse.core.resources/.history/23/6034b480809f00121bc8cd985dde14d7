@@ -45,7 +45,7 @@ public class ConnectingState extends StopableStateWithCallback {
 					if(DoStop()) return; 
 
 					
-					if(httpResponse!=null && httpResponse.getStatus()==200 && !httpResponse.getBodyAsString().isEmpty())
+					if(httpResponse.getStatus()==200 && !httpResponse.getBodyAsString().isEmpty())
 					{
 						JSONObject json = JSONHelper.ToJSONObject(httpResponse.getBodyAsString());
 						String connectionId="";

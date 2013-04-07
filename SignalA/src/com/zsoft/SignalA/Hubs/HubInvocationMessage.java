@@ -1,26 +1,32 @@
 package com.zsoft.SignalA.Hubs;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class HubInvocationMessage {
 
+	private String mHubName;
+	private String mMethod;
+	private JSONArray mArgs;
+	
 	public HubInvocationMessage(JSONObject message) {
-		// TODO Auto-generated constructor stub
+		
+		mHubName = message.optString("H");
+		mMethod = message.optString("M");
+		mArgs = message.optJSONArray("A");
+		//[{"H":"CalculatorHub","M":"newCalculation","A":["4/7/2013 12:42:23 PM : 10 + 5 = 15"]}]}" +
 	}
 
 	public String getHubName() {
-		// TODO Auto-generated method stub
-		return null;
+		return mHubName;
 	}
 
-	public JSONObject getArgs() {
-		// TODO Auto-generated method stub
-		return null;
+	public JSONArray getArgs() {
+		return mArgs;
 	}
 
 	public String getMethod() {
-		// TODO Auto-generated method stub
-		return null;
+		return mMethod;
 	}
 
 }

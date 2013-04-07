@@ -7390,3 +7390,12 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY org.eclipse.ui 4 4 2013-04-05 02:23:40.836
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-04-07 13:22:45.021 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=sv_SE
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2013-04-07 21:15:40.892
+!MESSAGE Invalid preference page path: XML Syntax

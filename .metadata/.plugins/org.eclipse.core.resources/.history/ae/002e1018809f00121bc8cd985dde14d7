@@ -64,7 +64,7 @@ public class TransportHelper {
 				//JSONObject m = null;
 				try {
 					String m = messagesArray.getString(i); //.getJSONObject(i);
-					connection.setMessage(messagesArray.getJSONObject(i));
+					connection.setMessage(m.toString());
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

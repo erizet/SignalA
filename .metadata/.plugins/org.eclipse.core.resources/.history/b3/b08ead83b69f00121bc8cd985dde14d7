@@ -109,6 +109,7 @@ public abstract class ConnectionBase {
 	}
 
 	public void setMessage(JSONObject response) {
+		// TODO Auto-generated method stub
 		
 	}
 

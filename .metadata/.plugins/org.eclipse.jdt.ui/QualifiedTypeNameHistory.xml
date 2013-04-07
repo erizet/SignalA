@@ -26,7 +26,6 @@
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubResultCallback"/>
 <fullyQualifiedTypeName name="android.R.bool"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubConnection"/>
-<fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
@@ -46,4 +45,5 @@
 <fullyQualifiedTypeName name="com.turbomanage.httpclient.ParameterMap"/>
 <fullyQualifiedTypeName name="com.turbomanage.httpclient.AsyncCallback"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
 </qualifiedTypeNameHistroy>
