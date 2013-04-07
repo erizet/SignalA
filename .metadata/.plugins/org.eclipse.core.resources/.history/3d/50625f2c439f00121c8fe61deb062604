@@ -1,0 +1,13 @@
+package com.zsoft.SignalA.Hubs;
+
+import org.json.JSONObject;
+
+public class HubResult {
+
+	private String Id;
+
+	public HubResult(JSONObject message) {
+		
+	}
+
+}

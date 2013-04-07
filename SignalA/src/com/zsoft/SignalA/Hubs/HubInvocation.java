@@ -22,7 +22,6 @@ public class HubInvocation {
 
 	}
 
-
 	public String getHubName() {
 		return mHubName;
 	}

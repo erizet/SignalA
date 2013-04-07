@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="35" version="2.0">
+<workbench progressCount="36" version="2.0">
 <workbenchAdvisor/>
 <window height="760" maximized="true" width="1024" x="134" y="176">
 <fastViewData fastViewLocation="1024"/>
@@ -23,7 +23,7 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
@@ -84,11 +84,11 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnectingState.java" partName="ConnectingState.java" path="D:/Android/SignalA/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ConnectingState.java" title="ConnectingState.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ConnectingState.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ConnectingState.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2312" selectionTopPixel="1049"/>
+<editorState selectionHorizontalPixel="0" selectionLength="57" selectionOffset="2746" selectionTopPixel="1321"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DisconnectingState.java" partName="DisconnectingState.java" path="D:/Android/SignalA/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/DisconnectingState.java" title="DisconnectingState.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/DisconnectingState.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/DisconnectingState.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="375" selectionTopPixel="60"/>
+<editorState selectionHorizontalPixel="0" selectionLength="64" selectionOffset="1779" selectionTopPixel="613"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Connection.java" partName="Connection.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Connection.java" title="Connection.java" tooltip="SignalA/src/com/zsoft/SignalA/Connection.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Connection.java"/>
@@ -106,9 +106,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/DisconnectedState.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="105" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubConnection.java" partName="HubConnection.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubConnection.java" title="HubConnection.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubConnection.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubConnection.java" partName="HubConnection.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubConnection.java" title="HubConnection.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubConnection.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubConnection.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4708" selectionTopPixel="2077"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2432" selectionTopPixel="775"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StateBase.java" partName="StateBase.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Transport/StateBase.java" title="StateBase.java" tooltip="SignalA/src/com/zsoft/SignalA/Transport/StateBase.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Transport/StateBase.java"/>
@@ -116,11 +116,11 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnectedState.java" partName="ConnectedState.java" path="D:/Android/SignalA/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ConnectedState.java" title="ConnectedState.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ConnectedState.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ConnectedState.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3632" selectionTopPixel="527"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2240" selectionTopPixel="1005"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StopableStateWithCallback.java" partName="StopableStateWithCallback.java" path="D:/Android/SignalA/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/StopableStateWithCallback.java" title="StopableStateWithCallback.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/StopableStateWithCallback.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/StopableStateWithCallback.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="131" selectionTopPixel="75"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="52" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StopableState.java" partName="StopableState.java" path="D:/Android/SignalA/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/StopableState.java" title="StopableState.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/StopableState.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/StopableState.java"/>
@@ -128,62 +128,42 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReconnectingState.java" partName="ReconnectingState.java" path="D:/Android/SignalA/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ReconnectingState.java" title="ReconnectingState.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ReconnectingState.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ReconnectingState.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="305" selectionTopPixel="78"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="52" selectionTopPixel="469"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IHubProxy.java" partName="IHubProxy.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/IHubProxy.java" title="IHubProxy.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/IHubProxy.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/IHubProxy.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="275" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OnDataCallback.java" partName="OnDataCallback.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/OnDataCallback.java" title="OnDataCallback.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/OnDataCallback.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/OnDataCallback.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="169" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="377" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnectionBase.java" partName="ConnectionBase.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/ConnectionBase.java" title="ConnectionBase.java" tooltip="SignalA/src/com/zsoft/SignalA/ConnectionBase.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/ConnectionBase.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2811" selectionTopPixel="1644"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubProxy.java" partName="HubProxy.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubProxy.java" title="HubProxy.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubProxy.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubProxy.java" partName="HubProxy.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubProxy.java" title="HubProxy.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubProxy.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubProxy.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1452" selectionTopPixel="230"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2444" selectionTopPixel="885"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TransportHelper.java" partName="TransportHelper.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Transport/TransportHelper.java" title="TransportHelper.java" tooltip="SignalA/src/com/zsoft/SignalA/Transport/TransportHelper.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Transport/TransportHelper.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="2113" selectionTopPixel="1095"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubResult.java" partName="HubResult.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubResult.java" title="HubResult.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubResult.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubResult.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="212" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3924" selectionTopPixel="1639"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubResultCallback.java" partName="HubResultCallback.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubResultCallback.java" title="HubResultCallback.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubResultCallback.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubResultCallback.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubOnDataCallback.java" partName="HubOnDataCallback.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubOnDataCallback.java" title="HubOnDataCallback.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubOnDataCallback.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubOnDataCallback.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="157" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubInvokeCallback.java" partName="HubInvokeCallback.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubInvokeCallback.java" title="HubInvokeCallback.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubInvokeCallback.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubInvokeCallback.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="231" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="35" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubInvocation.java" partName="HubInvocation.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubInvocation.java" title="HubInvocation.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubInvocation.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubInvocation.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="578" selectionTopPixel="15"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Subscription.java" partName="Subscription.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/Subscription.java" title="Subscription.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/Subscription.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/Subscription.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="163" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="TransportHelper.class" partName="TransportHelper.class" title="TransportHelper.class" tooltip="com.zsoft.SignalA.Transport.TransportHelper" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=SignalA.LongPolling/D:\/Android\/SignalA\/SignalA\/bin\/signala.jar&lt;com.zsoft.SignalA.Transport(TransportHelper.class"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1865" selectionTopPixel="945"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="523" selectionTopPixel="120"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" partName="activity_main.xml" path="D:/Android/SignalA/HubDemo/res/layout/activity_main.xml" title="activity_main.xml" tooltip="HubDemo/res/layout/activity_main.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HubDemo/res/layout/activity_main.xml"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="D:/Android/SignalA/HubDemo/src/com/zsoft/hubdemo/MainActivity.java" title="MainActivity.java" tooltip="HubDemo/src/com/zsoft/hubdemo/MainActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HubDemo/src/com/zsoft/hubdemo/MainActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1903" selectionTopPixel="510"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2920" selectionTopPixel="1144"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" partName="strings.xml" path="D:/Android/SignalA/HubDemo/res/values/strings.xml" title="strings.xml" tooltip="HubDemo/res/values/strings.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HubDemo/res/values/strings.xml"/>
@@ -196,7 +176,7 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CalculatorFragment.java" partName="CalculatorFragment.java" path="D:/Android/SignalA/HubDemo/src/com/zsoft/hubdemo/CalculatorFragment.java" title="CalculatorFragment.java" tooltip="HubDemo/src/com/zsoft/hubdemo/CalculatorFragment.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HubDemo/src/com/zsoft/hubdemo/CalculatorFragment.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1300" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1382" selectionTopPixel="95"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="Demo Manifest" path="D:/Android/SignalA/Demo/AndroidManifest.xml" title="Demo Manifest" tooltip="Demo/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Demo/AndroidManifest.xml"/>
@@ -206,30 +186,58 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemoActivity.java" partName="DemoActivity.java" path="D:/Android/SignalA/Demo/src/com/zsoft/SignalADemo/DemoActivity.java" title="DemoActivity.java" tooltip="Demo/src/com/zsoft/SignalADemo/DemoActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Demo/src/com/zsoft/SignalADemo/DemoActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="874" selectionTopPixel="21"/>
+<editorState selectionHorizontalPixel="0" selectionLength="12" selectionOffset="2986" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractHttpClient.java" partName="AbstractHttpClient.java" path="D:/Android/SignalA/basic-http-client/src/com/turbomanage/httpclient/AbstractHttpClient.java" title="AbstractHttpClient.java" tooltip="SignalA.LongPolling/httpclient-src/com/turbomanage/httpclient/AbstractHttpClient.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/httpclient-src/com/turbomanage/httpclient/AbstractHttpClient.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="14511" selectionTopPixel="3117"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="SignalA.LongPolling Manifest" path="D:/Android/SignalA/SignalA.LongPolling/AndroidManifest.xml" title="SignalA.LongPolling Manifest" tooltip="SignalA.LongPolling/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/AndroidManifest.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JSONHelper.java" partName="JSONHelper.java" path="D:/Android/SignalA/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/JSONHelper.java" title="JSONHelper.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/JSONHelper.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/JSONHelper.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="337" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpPost.java" partName="HttpPost.java" path="D:/Android/SignalA/basic-http-client/src/com/turbomanage/httpclient/HttpPost.java" title="HttpPost.java" tooltip="basic-http-client/src/com/turbomanage/httpclient/HttpPost.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/basic-http-client/src/com/turbomanage/httpclient/HttpPost.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1599" selectionTopPixel="17"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubInvocationMessage.java" partName="HubInvocationMessage.java" path="D:/Android/SignalA/SignalA/src/com/zsoft/SignalA/Hubs/HubInvocationMessage.java" title="HubInvocationMessage.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubInvocationMessage.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubInvocationMessage.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="293" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+</viewState>
+</view>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
 <view id="org.eclipse.debug.ui.ExpressionView" partName="Expressions">
 <viewState/>
 </view>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
 <viewState/>
 </view>
-<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
-<viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
-<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
-<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="2" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
-</viewState>
-</view>
-<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
-<viewState/>
-</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Warnings (8 items)"/>
+<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="123" org.eclipse.ui.ide.pathField="155" org.eclipse.ui.ide.resourceField="159" org.eclipse.ui.ide.severityAndDescriptionField="676"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -238,6 +246,9 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1350664670689">
@@ -268,23 +279,10 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
-</view>
-<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
-<viewState/>
-</view>
-<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
-<viewState/>
-</view>
-<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
-<viewState/>
-</view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="com.android.ide.eclipse.ddms.views.LogCatView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -347,13 +345,13 @@
 <perspective_action id="com.android.ide.eclipse.hierarchyviewer.TreeViewPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -369,26 +367,15 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@43231b" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
-<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
-</folder>
-</info>
-<info part="org.eclipse.ui.editorss" ratio="0.19858156" ratioLeft="252" ratioRight="1017" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.69325155" ratioLeft="452" ratioRight="200" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@119c6a4" ratio="0.7776074" ratioLeft="507" ratioRight="145" relationship="4" relative="left">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
-<page content="org.eclipse.pde.runtime.LogView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.callhierarchy.view" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
@@ -397,6 +384,23 @@
 <part id="4"/>
 <part id="5"/>
 </presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@43231b" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.2001576" ratioLeft="254" ratioRight="1015" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.69325155" ratioLeft="452" ratioRight="200" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.pde.runtime.LogView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@25dacc" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
@@ -487,7 +491,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.702454" ratioLeft="458" ratioRight="194" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.69018406" ratioLeft="450" ratioRight="202" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -501,7 +505,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@39e42a" ratio="0.2671395" ratioLeft="339" ratioRight="930" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@39e42a" ratio="0.2718676" ratioLeft="345" ratioRight="924" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
 <folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
@@ -511,7 +515,7 @@
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.30309278" ratioLeft="147" ratioRight="338" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info part="org.eclipse.ui.editorss" ratio="0.3512304" ratioLeft="157" ratioRight="290" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
 <info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
@@ -522,7 +526,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="636" ratioRight="636" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.ExpressionView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="Expressions"/>
@@ -541,166 +545,167 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA.LongPolling\/bin\/signala.longpolling.jar&lt;com.zsoft.SignalA.transport.longpolling(ConnectingState.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA\/bin\/signala.jar&lt;com.zsoft.SignalA.Hubs(HubConnection.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA.LongPolling\/bin\/signala.longpolling.jar&lt;com.zsoft.SignalA.transport.longpolling(ConnectedState.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA.LongPolling\/bin\/signala.longpolling.jar&lt;com.zsoft.SignalA.transport.longpolling(StopableStateWithCallback.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA\/bin\/signala.jar&lt;com.zsoft.SignalA(ConnectionBase.class"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA.LongPolling\/bin\/signala.longpolling.jar&lt;com.androidquery.callback(AbstractAjaxCallback.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/ConnectingState.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubProxy.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubConnection.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA.LongPolling\/bin\/signala.longpolling.jar&lt;com.zsoft.SignalA.transport.longpolling(ConnectedState.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubResult.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubInvokeCallback.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/HubDemo/src/com/zsoft/hubdemo/MainActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubInvocation.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubProxy.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubOnDataCallback.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/OnDataCallback.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/Subscription.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Transport/TransportHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SignalA/src/com/zsoft/SignalA/Hubs/HubInvocationMessage.java"/>
 </editors>
-<item historyLabel="HubConnection.class" index="1">
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1230" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1091" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1138" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1185" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1226" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1286" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1185" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1511" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1609" y="0"/>
+</item>
+<item historyLabel="HubResult.java" index="1">
+<position info="not_deleted" x="301" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1609" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="3">
+<position info="not_deleted" x="2920" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1091" y="45"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1609" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1906" y="0"/>
+</item>
+<item historyLabel="HubInvocation.java" index="4">
+<position info="not_deleted" x="328" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="1810" y="0"/>
+</item>
+<item historyLabel="HubInvocation.java" index="4">
+<position info="not_deleted" x="515" y="0"/>
+</item>
+<item historyLabel="HubProxy.java" index="5">
+<position info="not_deleted" x="1217" y="53"/>
+</item>
+<item historyLabel="HubInvokeCallback.java" index="2">
+<position info="not_deleted" x="35" y="0"/>
+</item>
+<item historyLabel="HubOnDataCallback.java" index="6">
+<position info="not_deleted" x="157" y="0"/>
+</item>
+<item historyLabel="HubResult.java" index="1">
+<position info="not_deleted" x="301" y="0"/>
+</item>
+<item historyLabel="OnDataCallback.java" index="7">
+<position info="not_deleted" x="169" y="0"/>
+</item>
+<item historyLabel="Subscription.java" index="8">
 <position/>
 </item>
-<item historyLabel="HubConnection.class" index="1">
-<position/>
+<item historyLabel="OnDataCallback.java" index="7">
+<position info="not_deleted" x="169" y="0"/>
 </item>
-<item historyLabel="HubConnection.class" index="1">
-<position/>
+<item historyLabel="HubResult.java" index="1">
+<position info="not_deleted" x="301" y="0"/>
 </item>
-<item historyLabel="HubConnection.class" index="1">
-<position/>
+<item historyLabel="HubOnDataCallback.java" index="6">
+<position info="not_deleted" x="157" y="0"/>
 </item>
-<item historyLabel="HubConnection.class" index="1">
-<position/>
+<item historyLabel="HubInvokeCallback.java" index="2">
+<position info="not_deleted" x="35" y="0"/>
 </item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
+<item historyLabel="TransportHelper.java" index="9">
+<position info="not_deleted" x="3924" y="0"/>
 </item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
+<item historyLabel="HubProxy.java" index="5">
+<position info="not_deleted" x="1217" y="53"/>
 </item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
+<item historyLabel="HubInvocation.java" index="4">
+<position info="not_deleted" x="523" y="0"/>
 </item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
+<item historyLabel="TransportHelper.java" index="9">
+<position info="not_deleted" x="3924" y="0"/>
 </item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="2024" y="0"/>
 </item>
-<item historyLabel="ConnectingState.class" index="0">
-<position/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4345" y="0"/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position info="not_deleted" x="529" y="0"/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position info="not_deleted" x="866" y="0"/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position info="not_deleted" x="1229" y="0"/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4345" y="0"/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4381" y="0"/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4444" y="0"/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4502" y="0"/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4650" y="0"/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4381" y="0"/>
-</item>
-<item historyLabel="HubConnection.class" index="1">
-<position info="not_deleted" x="4684" y="0"/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="ConnectedState.class" index="2">
-<position/>
-</item>
-<item historyLabel="StopableStateWithCallback.class" index="3">
-<position info="not_deleted" x="929" y="0"/>
-</item>
-<item historyLabel="ConnectionBase.class" index="4">
-<position info="not_deleted" x="1234" y="0"/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position info="not_deleted" x="2339" y="0"/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position info="not_deleted" x="2375" y="0"/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
+<item historyLabel="HubInvocationMessage.java" index="10">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="AbstractAjaxCallback.class" index="5">
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="2039" y="0"/>
+</item>
+<item historyLabel="HubInvocationMessage.java" index="10">
+<position info="not_deleted" x="482" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="2003" y="0"/>
+</item>
+<item historyLabel="HubInvocationMessage.java" index="10">
+<position info="not_deleted" x="207" y="6"/>
+</item>
+<item historyLabel="HubInvocationMessage.java" index="10">
+<position info="not_deleted" x="482" y="0"/>
+</item>
+<item historyLabel="HubInvocationMessage.java" index="10">
+<position info="not_deleted" x="287" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="2475" y="0"/>
+</item>
+<item historyLabel="HubInvocationMessage.java" index="10">
+<position info="not_deleted" x="293" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="2475" y="0"/>
+</item>
+<item historyLabel="HubInvocationMessage.java" index="10">
+<position info="not_deleted" x="390" y="6"/>
+</item>
+<item historyLabel="HubInvocationMessage.java" index="10">
+<position info="not_deleted" x="293" y="0"/>
+</item>
+<item historyLabel="HubConnection.java" index="0">
+<position info="not_deleted" x="2432" y="0"/>
+</item>
+<item historyLabel="HubProxy.java" index="5">
+<position info="not_deleted" x="2507" y="0"/>
+</item>
+<item historyLabel="Subscription.java" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ConnectedState.class" index="2">
-<position info="not_deleted" x="4031" y="0"/>
+<item historyLabel="Subscription.java" index="8">
+<position info="not_deleted" x="91" y="0"/>
 </item>
-<item historyLabel="ConnectingState.java" index="6">
-<position info="not_deleted" x="2312" y="0"/>
-</item>
-<item historyLabel="HubProxy.java" index="7">
-<position info="not_deleted" x="1452" y="0"/>
-</item>
-<item historyLabel="HubConnection.java" index="8">
-<position info="not_deleted" x="4708" y="0"/>
-</item>
-<item historyLabel="ConnectingState.class" index="0">
-<position info="not_deleted" x="1229" y="0"/>
-</item>
-<item historyLabel="ConnectedState.class" index="9">
-<position info="not_deleted" x="4099" y="0"/>
-</item>
-<item active="true" historyLabel="HubConnection.java" index="8">
-<position info="not_deleted" x="4708" y="0"/>
+<item active="true" historyLabel="HubProxy.java" index="5">
+<position info="not_deleted" x="2507" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -708,6 +713,9 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -716,54 +724,49 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@119c6a4"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ConnectingState.class" tooltip="com.zsoft.SignalA.transport.longpolling.ConnectingState">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA.LongPolling\/bin\/signala.longpolling.jar&lt;com.zsoft.SignalA.transport.longpolling(ConnectingState.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Subscription.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/Subscription.java">
+<persistable path="/SignalA/src/com/zsoft/SignalA/Hubs/Subscription.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="HubConnection.class" tooltip="com.zsoft.SignalA.Hubs.HubConnection">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA\/bin\/signala.jar&lt;com.zsoft.SignalA.Hubs(HubConnection.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DemoActivity.java" tooltip="Demo/src/com/zsoft/SignalADemo/DemoActivity.java">
-<persistable path="/Demo/src/com/zsoft/SignalADemo/DemoActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="HubDemo/AndroidManifest.xml">
-<persistable path="/HubDemo/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="Demo/AndroidManifest.xml">
-<persistable path="/Demo/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ConnectionBase.class" tooltip="com.zsoft.SignalA.ConnectionBase">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=HubDemo/D:\/Android\/SignalA\/SignalA\/bin\/signala.jar&lt;com.zsoft.SignalA(ConnectionBase.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HubInvocationMessage.java" tooltip="SignalA/src/com/zsoft/SignalA/Hubs/HubInvocationMessage.java">
+<persistable path="/SignalA/src/com/zsoft/SignalA/Hubs/HubInvocationMessage.java"/>
 </file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ClassLoader.class" tooltip="java.lang.ClassLoader">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=HubDemo/D:\/android-sdk-windows\/platforms\/android-17\/android.jar&lt;java.lang(ClassLoader.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CalculatorFragment.java" tooltip="HubDemo/src/com/zsoft/hubdemo/CalculatorFragment.java">
-<persistable path="/HubDemo/src/com/zsoft/hubdemo/CalculatorFragment.java"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="TransportHelper.class" tooltip="com.zsoft.SignalA.Transport.TransportHelper">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=SignalA.LongPolling/D:\/Android\/SignalA\/SignalA\/bin\/signala.jar&lt;com.zsoft.SignalA.Transport(TransportHelper.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="calculator_fragment.xml" tooltip="HubDemo/res/layout/calculator_fragment.xml">
-<persistable path="/HubDemo/res/layout/calculator_fragment.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpPost.java" tooltip="basic-http-client/src/com/turbomanage/httpclient/HttpPost.java">
+<persistable path="/basic-http-client/src/com/turbomanage/httpclient/HttpPost.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="connection_fragment.xml" tooltip="HubDemo/res/layout/connection_fragment.xml">
-<persistable path="/HubDemo/res/layout/connection_fragment.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpRequest.java" tooltip="basic-http-client/src/com/turbomanage/httpclient/HttpRequest.java">
+<persistable path="/basic-http-client/src/com/turbomanage/httpclient/HttpRequest.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnectionFragment.java" tooltip="HubDemo/src/com/zsoft/hubdemo/ConnectionFragment.java">
 <persistable path="/HubDemo/src/com/zsoft/hubdemo/ConnectionFragment.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="HubDemo/res/values/strings.xml">
-<persistable path="/HubDemo/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BasicRequestHandler.java" tooltip="basic-http-client/src/com/turbomanage/httpclient/BasicRequestHandler.java">
+<persistable path="/basic-http-client/src/com/turbomanage/httpclient/BasicRequestHandler.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="HubDemo/src/com/zsoft/hubdemo/MainActivity.java">
-<persistable path="/HubDemo/src/com/zsoft/hubdemo/MainActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpGet.java" tooltip="basic-http-client/src/com/turbomanage/httpclient/HttpGet.java">
+<persistable path="/basic-http-client/src/com/turbomanage/httpclient/HttpGet.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" tooltip="HubDemo/res/layout/activity_main.xml">
-<persistable path="/HubDemo/res/layout/activity_main.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AsyncHttpClient.java" tooltip="basic-http-client/src/com/turbomanage/httpclient/AsyncHttpClient.java">
+<persistable path="/basic-http-client/src/com/turbomanage/httpclient/AsyncHttpClient.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="TransportHelper.class" tooltip="com.zsoft.SignalA.Transport.TransportHelper">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=SignalA.LongPolling/D:\/Android\/SignalA\/SignalA\/bin\/signala.jar&lt;com.zsoft.SignalA.Transport(TransportHelper.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AndroidHttpClient.java" tooltip="basic-http-client/src/com/turbomanage/httpclient/android/AndroidHttpClient.java">
+<persistable path="/basic-http-client/src/com/turbomanage/httpclient/android/AndroidHttpClient.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ConnectedState.class" tooltip="com.zsoft.SignalA.transport.longpolling.ConnectedState">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Demo/D:\/Android\/SignalA\/SignalA.LongPolling\/bin\/signala.longpolling.jar&lt;com.zsoft.SignalA.transport.longpolling(ConnectedState.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JSONHelper.java" tooltip="SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/JSONHelper.java">
+<persistable path="/SignalA.LongPolling/src/com/zsoft/SignalA/transport/longpolling/JSONHelper.java"/>
 </file>
 </mruList>
 </workbench>

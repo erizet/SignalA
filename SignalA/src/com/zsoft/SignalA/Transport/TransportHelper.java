@@ -32,20 +32,18 @@ public class TransportHelper {
     	String newMessageId = null;
     	JSONArray messagesArray = null;
     	String groupsToken = null;
-    	JSONObject transportData = null;
-    	JSONObject info = null;
+    	//JSONObject transportData = null;
+    	String info = null;
 
 		result.timedOut = response.optInt("T") == 1;	
 		result.disconnected = response.optInt("D") == 1;
 		newMessageId = response.optString("C");
 		messagesArray = response.optJSONArray("M");
 		groupsToken = response.optString("G");
-		info = response.optJSONObject("I");
+		info = response.optString("I", null);
 
 		if(info != null)
 		{
-			
-			// ToDo
 			connection.setMessage(response);
 			return result;
 		}
@@ -121,7 +119,11 @@ public class TransportHelper {
 
         if (data != null)
         {
-            qs += "&connectionData=" + data;
+            try {
+				qs += "&connectionData=" + URLEncoder.encode(data, "utf-8");
+			} catch (UnsupportedEncodingException e) {
+				Log.e(TAG, "Unsupported message encoding error, when encoding connectionData.");
+			}
         }
 
         return qs;

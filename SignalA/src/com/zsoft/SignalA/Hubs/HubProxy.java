@@ -55,7 +55,7 @@ public class HubProxy implements IHubProxy {
 			@Override
 			public void OnError(Exception ex) {
 				// TODO Cancel the callback
-				Log.e(TAG, "Faile to invoke " + method + "on " + mHubName);
+				Log.e(TAG, "Failed to invoke " + method + "on " + mHubName);
 				mConnection.RemoveCallback(callbackId);
 				// callback.OnError() ?!?!?
 			}

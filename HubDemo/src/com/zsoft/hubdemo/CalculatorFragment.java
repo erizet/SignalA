@@ -31,7 +31,7 @@ public class CalculatorFragment extends Fragment {
 	    	  mListener.
 	    	  calculate(Integer.parseInt(mValue1TextBox.getText().toString()),
 	    			    Integer.parseInt(mValue2TextBox.getText().toString()),
-	    			    mPlusButton.isChecked() ? "plus" : "minus" );
+	    			    mPlusButton.isChecked() ? "Add" : "Sub" );
 	      }
 	    });
 

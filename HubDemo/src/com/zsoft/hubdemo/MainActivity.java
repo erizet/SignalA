@@ -98,8 +98,8 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 		
 		HubInvokeCallback callback = new HubInvokeCallback() {
 			@Override
-			public void OnResult(boolean succeeded, JSONObject response) {
-				Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+			public void OnResult(boolean succeeded, String response) {
+				Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
 			}
 			
 			@Override

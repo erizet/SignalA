@@ -35,10 +35,15 @@
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubProxy"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.SendCallback"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.IHubProxy"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubInvokeCallback"/>
 <fullyQualifiedTypeName name="com.zsoft.hubdemo.MainActivity"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="android.webkit.CookieManager"/>
+<fullyQualifiedTypeName name="java.net.CookieManager"/>
+<fullyQualifiedTypeName name="com.turbomanage.httpclient.android.AndroidHttpClient"/>
+<fullyQualifiedTypeName name="com.turbomanage.httpclient.ParameterMap"/>
+<fullyQualifiedTypeName name="com.turbomanage.httpclient.AsyncCallback"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
 </qualifiedTypeNameHistroy>

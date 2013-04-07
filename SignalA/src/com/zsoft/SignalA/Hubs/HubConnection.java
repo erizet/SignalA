@@ -31,7 +31,7 @@ public class HubConnection extends com.zsoft.SignalA.ConnectionBase {
 	@Override
 	public void setMessage(JSONObject message) {
 
-		JSONObject info = message.optJSONObject("I");
+		String info = message.optString("I", null);
 
 		if (info != null)
         {
@@ -39,38 +39,45 @@ public class HubConnection extends com.zsoft.SignalA.ConnectionBase {
         	HubInvokeCallback callback = null;
 
             synchronized (mCallbacks) {
-                if(mCallbacks.containsKey(result.Id))
-                	callback = mCallbacks.remove(result.Id);
+                if(mCallbacks.containsKey(result.getId()))
+                	callback = mCallbacks.remove(result.getId());
                 else
                 {
-                	Log.d(TAG, "Callback with id " + result.Id + " not found!");
+                	Log.d(TAG, "Callback with id " + result.getId() + " not found!");
                 }
             }
 
             if (callback != null)
             {
-                //callback.OnResult(true, result);
+            	try
+            	{
+            		callback.OnResult(true, result.getResult());
+            	}
+            	catch(Exception ex)
+            	{
+                	Log.w(TAG,  "Exception in callback", ex);
+            	}
             }
         }
         else
         {
-//        	HubInvocation invocation = new HubInvocation(message);
-//            HubProxy hubProxy;
-//            if (mHubs.containsKey(invocation.getHubName()))
-//            {
-//            	/* ToDo. Handle state
-//                if (invocation.State != null)
-//                {
-//                    foreach (var state in invocation.State)
-//                    {
-//                        hubProxy[state.Key] = state.Value;
-//                    }
-//                }
-//				*/
-//            	hubProxy = mHubs.get(invocation.getHubName());
-//            	hubProxy.InvokeEvent(invocation.getMethod(), invocation.getArgs());
-//            }
-//
+        	HubInvocationMessage invokeMessage = new HubInvocationMessage(message);
+            HubProxy hubProxy;
+            if (mHubs.containsKey(invokeMessage.getHubName()))
+            {
+            	/* ToDo. Handle state
+                if (invocation.State != null)
+                {
+                    foreach (var state in invocation.State)
+                    {
+                        hubProxy[state.Key] = state.Value;
+                    }
+                }
+				*/
+            	hubProxy = mHubs.get(invokeMessage.getHubName());
+            	hubProxy.InvokeEvent(invokeMessage.getMethod(), invokeMessage.getArgs());
+            }
+
             super.setMessage(message);
         }
 		
