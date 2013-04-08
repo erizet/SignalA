@@ -103,9 +103,13 @@ public abstract class ConnectionBase {
 		mGroupsToken = groupsToken;
 	}
 	
-	public void setMessage(JSONObject response) 
+	public void setMessage(String message)
 	{
-		OnMessage(response.toString());
+		OnMessage(message);
+	}
+
+	public void setMessage(JSONObject response) {
+		
 	}
 
 	public void setError(Exception exception)

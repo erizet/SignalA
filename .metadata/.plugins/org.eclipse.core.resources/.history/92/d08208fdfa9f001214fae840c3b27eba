@@ -105,7 +105,7 @@ public abstract class ConnectionBase {
 	
 	public void setMessage(JSONObject response) 
 	{
-		OnMessage(response.toString());
+		OnMessage(message);
 	}
 
 	public void setError(Exception exception)

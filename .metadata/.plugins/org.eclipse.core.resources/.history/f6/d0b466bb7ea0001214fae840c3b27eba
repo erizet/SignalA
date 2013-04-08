@@ -52,8 +52,8 @@ public class ConnectedState extends StopableStateWithCallback {
 			return; 
 		}
 
-	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
-	    url +=  "send?transport=" + TRANSPORT_NAME;
+	    String baseUrl = mConnection.getUrl();
+	    String url =  "/send?transport=" + TRANSPORT_NAME;
 		try {
 			url += "&connectionToken=" + URLEncoder.encode(mConnection.getConnectionToken(), "utf-8");
 		} catch (UnsupportedEncodingException e) {
@@ -95,7 +95,7 @@ public class ConnectedState extends StopableStateWithCallback {
             }
 		};
 
-		AndroidHttpClient httpClient = new AndroidHttpClient();
+		AndroidHttpClient httpClient = new AndroidHttpClient(baseUrl);
 		ParameterMap params = httpClient.newParams()
 		        						.add("data", text.toString());
         httpClient.setMaxRetries(1);

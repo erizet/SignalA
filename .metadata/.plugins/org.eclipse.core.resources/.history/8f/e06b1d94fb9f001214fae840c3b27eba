@@ -61,10 +61,13 @@ public class TransportHelper {
         if (messagesArray != null)
         {
 			for (int i = 0; i < messagesArray.length(); i++) {
+				//JSONObject m = null;
 				try {
+					String m = messagesArray.getString(i); //.getJSONObject(i);
 					connection.setMessage(messagesArray.getJSONObject(i));
 				} catch (JSONException e) {
-					Log.e(TAG, "Error when calling setMessage on connection.",e);
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 
