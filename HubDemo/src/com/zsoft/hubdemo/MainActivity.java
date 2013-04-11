@@ -3,10 +3,12 @@ package com.zsoft.hubdemo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.zsoft.SignalA.Hubs.HubConnection;
 import com.zsoft.SignalA.Hubs.HubInvokeCallback;
+import com.zsoft.SignalA.Hubs.HubOnDataCallback;
 import com.zsoft.SignalA.Hubs.IHubProxy;
 import com.zsoft.SignalA.Transport.StateBase;
 import com.zsoft.SignalA.transport.longpolling.LongPollingTransport;
@@ -80,6 +82,17 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		hub.On("NewCalculation", new HubOnDataCallback() 
+		{
+			@Override
+			public void OnReceived(JSONArray args) {
+				for(int i=0; i<args.length(); i++)
+				{
+					Toast.makeText(MainActivity.this, args.opt(i).toString(), Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
 		
 		
 		con.Start();

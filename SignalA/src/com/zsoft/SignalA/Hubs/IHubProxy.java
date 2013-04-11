@@ -7,7 +7,7 @@ import java.util.Collection;
 /// </summary>
 public interface IHubProxy {
 	
-	//void On(String eventName, OnDataCallback callback);
+	public void On(String eventName, HubOnDataCallback callback); 
 	public void Invoke(String method, Collection<?> args, HubInvokeCallback callback);
 	
         //JToken this[String name] { get; set; }

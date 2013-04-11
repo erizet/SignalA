@@ -105,7 +105,7 @@ public class TransportHelper {
 			}
 		}
 
-        if (connection.getGroupsToken() != null)
+        if (connection.getGroupsToken() != null && connection.getGroupsToken().length() > 0)
         {
             try {
 				qs += "&groupsToken=" + URLEncoder.encode(connection.getGroupsToken(), "utf-8");

@@ -46,4 +46,5 @@
 <fullyQualifiedTypeName name="com.turbomanage.httpclient.AsyncCallback"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubOnDataCallback"/>
 </qualifiedTypeNameHistroy>

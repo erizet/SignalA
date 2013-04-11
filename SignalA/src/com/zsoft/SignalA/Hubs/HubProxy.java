@@ -2,6 +2,7 @@ package com.zsoft.SignalA.Hubs;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -76,6 +77,8 @@ public class HubProxy implements IHubProxy {
 		if(eventName==null) throw new IllegalArgumentException("eventName can not be null");
 		if(callback==null) throw new IllegalArgumentException("callback can not be null");
 
+		eventName = eventName.toLowerCase(Locale.US);
+		
 		if(!mSubscriptions.containsKey(eventName))
 		{
 			mSubscriptions.put(eventName, callback);

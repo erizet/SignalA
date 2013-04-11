@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zsoft.SignalA"
     android:versionCode="2"
-    android:versionName="0.9beta" >
+    android:versionName="0.10beta" >
 
     <uses-sdk android:minSdkVersion="8"  android:targetSdkVersion="16" />
 

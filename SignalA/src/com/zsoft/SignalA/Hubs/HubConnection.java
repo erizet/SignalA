@@ -109,6 +109,7 @@ public class HubConnection extends com.zsoft.SignalA.ConnectionBase {
             throw new OperationApplicationException("Proxies cannot be added when connection is started");
         }
 
+        hubName = hubName.toLowerCase();
         HubProxy hubProxy;
         if(mHubs.containsKey(hubName))
         	hubProxy = mHubs.get(hubName);
