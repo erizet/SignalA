@@ -1,9 +1,19 @@
 [sr]: http://signalr.net/
 [aq]: https://github.com/androidquery/androidquery
+[bhc]: https://code.google.com/p/basic-http-client/
+[calc]: http://signalrcalc.apphb.com/
 
 #SignalA#
 
 ##Updates##
+
+###2013-02-20 version 0.10beta released###
+I've changed a coupe of things in this realese.
+- I have changed the transport. LongPolling now uses [basic-http-client][bhc] instead of [Aquery][aq] for http communication. I've removed all dependencies on [Aquery][aq].
+- Hubs is now implemented. Checkout my implementation and say what you think about it. Calling functions on server from client, and calling functions on client from server is supported. NOTE! State is not implemented yet.
+- I've included a new sample, HubDemo, in the repo. It shows how you can implement hubs.
+- I have also set up a [SignalR][sr] server on Appharbor so HubDemo can talk to it.
+
 
 ###2013-02-20 version 0.9beta released###
 Version 0.9beta uses the SignalR-protocol version 1.2 which is used in the 1.0 release of SignalR.
@@ -11,7 +21,7 @@ It has also (beta)support for groups.
 
 ##Description##
 SignalA is a [SignalR][sr]-client for Android. It's implemented as a Android-library. At this moment is long polling the only implemented transport. Long polling is a separate library.
-Http-requests in the Long polling library is using [Android-query][aq].
+Http-requests in the Long polling library is using [basic-http-client][bhc].
 
 ##How to use?##
 
@@ -55,7 +65,7 @@ That's it!
 For a complete sample see the Demo-project.
 
 ##Limitations##
-Currently is ~~Groups and~~ Hubs not implemented, only PersistentConnection. 
+Hubs dont supprt State yet.
 
 ##Contributions##
 I'll be more than happy to get contributions!!!
