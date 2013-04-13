@@ -11,7 +11,6 @@ INDEX VERSION 1.126+D:\Android\SignalA\.metadata\.plugins\org.eclipse.jdt.core
 4041092966.index
 4108727661.index
 2872198762.index
-4284880163.index
 1729775399.index
 3083612128.index
 4173023868.index

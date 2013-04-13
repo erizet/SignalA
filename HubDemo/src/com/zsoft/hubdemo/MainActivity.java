@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import com.zsoft.SignalA.Hubs.HubConnection;
 import com.zsoft.SignalA.Hubs.HubInvokeCallback;
@@ -24,11 +23,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements ConnectionFragment.OnConnectionRequestedListener,
+	CalculatorFragment.ShowAllListener,
 	CalculatorFragment.OnCalculationRequestedListener
 {
 	protected HubConnection con = null;
 	protected IHubProxy hub = null;
 	protected TextView tvStatus = null;
+	private Boolean mShowAll = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 		
 		tvStatus = (TextView) findViewById(R.id.connection_status);
 		
-		ChangeFragment(new ConnectionFragment());
+		ChangeFragment(new ConnectionFragment(), false);
 		
 		
 	}
@@ -64,7 +65,7 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 						break;
 					case Connected:
 						CalculatorFragment fragment = new CalculatorFragment();
-						ChangeFragment(fragment);
+						ChangeFragment(fragment, true);
 						break;
 				}
 			}
@@ -87,9 +88,12 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 		{
 			@Override
 			public void OnReceived(JSONArray args) {
-				for(int i=0; i<args.length(); i++)
+				if(mShowAll)
 				{
-					Toast.makeText(MainActivity.this, args.opt(i).toString(), Toast.LENGTH_SHORT).show();
+					for(int i=0; i<args.length(); i++)
+					{
+						Toast.makeText(MainActivity.this, args.opt(i).toString(), Toast.LENGTH_SHORT).show();
+					}
 				}
 			}
 		});
@@ -128,11 +132,25 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 		
 	}
 
-	protected void ChangeFragment(Fragment fragment)
+	protected void ChangeFragment(Fragment fragment, Boolean addToBackstack)
 	{
-		getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment)
-		.addToBackStack(null).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-		.commit();
+		FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+		trans.replace(R.id.fragment_container, fragment);
+		if(addToBackstack)
+			trans.addToBackStack(null);
+		trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+		trans.commit();
 		
 	}
+
+	@Override
+	public void setShowAll(Boolean value) {
+		mShowAll = value;
+	}
+
+	@Override
+	public Boolean getShowAll() {
+		return mShowAll;
+	}
+
 }

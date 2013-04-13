@@ -6,7 +6,6 @@ import java.util.Locale;
 import java.util.Map;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import android.util.Log;
 
