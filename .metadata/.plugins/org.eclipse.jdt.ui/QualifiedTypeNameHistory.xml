@@ -47,4 +47,11 @@
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="com.zsoft.SignalA.Hubs.HubOnDataCallback"/>
+<fullyQualifiedTypeName name="java.util.Locale"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="com.zsoft.hubdemo.CalculatorFragment.OnShowAllCalcsSelectionChanged"/>
+<fullyQualifiedTypeName name="com.zsoft.hubdemo.CalculatorFragment.OnShowAllChangedListener"/>
+<fullyQualifiedTypeName name="android.widget.CheckBox"/>
+<fullyQualifiedTypeName name="android.widget.CompoundButton.OnCheckedChangeListener"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
 </qualifiedTypeNameHistroy>
