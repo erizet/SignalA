@@ -12,7 +12,7 @@ I've changed a coupe of things in this realese.
 - I have changed the transport. LongPolling now uses [basic-http-client][bhc] instead of [Aquery][aq] for http communication. I've removed all dependencies on [Aquery][aq].
 - Hubs is now implemented. Checkout my implementation and say what you think about it. Calling functions on server from client, and calling functions on client from server is supported. NOTE! State is not implemented yet.
 - I've included a new sample, HubDemo, in the repo. It shows how you can implement hubs.
-- I have also set up a [SignalR][sr] server on Appharbor so HubDemo can talk to it.
+- I have also set up a [SignalR][sr] server on Appharbor so HubDemo can talk to it. You'll find it [here][calc].
 
 
 ###2013-02-20 version 0.9beta released###
