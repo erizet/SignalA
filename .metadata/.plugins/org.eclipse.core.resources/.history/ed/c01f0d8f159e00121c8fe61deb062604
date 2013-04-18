@@ -1,5 +1,0 @@
-package com.zsoft.SignalA.transport.longpolling;
-
-public class JSONHelper {
-
-}
