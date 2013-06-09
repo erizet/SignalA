@@ -34,7 +34,7 @@
 		<link>
 			<name>httpclient-src</name>
 			<type>2</type>
-			<location>D:/Android/SignalA/basic-http-client/src</location>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/basic-http-client/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

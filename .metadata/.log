@@ -8040,3 +8040,13 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 !SUBENTRY 2 org.eclipse.core.resources 4 274 2013-04-18 14:14:29.080
 !MESSAGE Resource is out of sync with the file system: '/Demo/bin/R.txt'.
+!SESSION 2013-06-07 10:23:09.639 -----------------------------------------------
+eclipse.buildId=v22.0.1-685705
+java.version=1.7.0_21
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY org.eclipse.ui 4 4 2013-06-08 13:54:40.529
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.
