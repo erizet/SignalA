@@ -8,12 +8,12 @@ import android.util.Log;
 import com.turbomanage.httpclient.AsyncCallback;
 import com.turbomanage.httpclient.HttpResponse;
 import com.turbomanage.httpclient.ParameterMap;
-import com.turbomanage.httpclient.android.AndroidHttpClient;
 import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.Transport.StateBase;
 import com.zsoft.SignalA.SendCallback;
+import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
 public class DisconnectingState extends StateBase {
 
@@ -70,7 +70,7 @@ public class DisconnectingState extends StateBase {
 	        }
 		};
 
-		AndroidHttpClient httpClient = new AndroidHttpClient();
+		ParallelHttpClient httpClient = new ParallelHttpClient();
 		httpClient.setMaxRetries(1);
 		ParameterMap params = httpClient.newParams();
 		httpClient.post(url, params, cb);

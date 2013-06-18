@@ -4,13 +4,13 @@ import org.json.JSONObject;
 
 import com.turbomanage.httpclient.AsyncCallback;
 import com.turbomanage.httpclient.HttpResponse;
-import com.turbomanage.httpclient.android.AndroidHttpClient;
 import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
 import com.zsoft.SignalA.Transport.ProcessResult;
 import com.zsoft.SignalA.Transport.TransportHelper;
+import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
 public class ReconnectingState extends StopableStateWithCallback {
 
@@ -103,7 +103,7 @@ public class ReconnectingState extends StopableStateWithCallback {
 			//mCurrentCallback = cb;
 		}
 
-		AndroidHttpClient httpClient = new AndroidHttpClient();
+		ParallelHttpClient httpClient = new ParallelHttpClient();
         httpClient.setMaxRetries(1);
         httpClient.post(url, null, cb);
 	}

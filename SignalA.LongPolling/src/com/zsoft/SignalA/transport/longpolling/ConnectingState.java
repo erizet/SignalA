@@ -10,6 +10,7 @@ import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
+import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
 public class ConnectingState extends StopableStateWithCallback {
 	public ConnectingState(ConnectionBase connection) {
@@ -96,7 +97,7 @@ public class ConnectingState extends StopableStateWithCallback {
 			//mCurrentCallback = cb;
 		}
 		
-		AndroidHttpClient httpClient = new AndroidHttpClient();
+		ParallelHttpClient httpClient = new ParallelHttpClient();
         httpClient.setMaxRetries(1);
         httpClient.get(url, null, cb);
 	}

@@ -8050,3 +8050,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.android.ide.
 
 !ENTRY org.eclipse.ui 4 4 2013-06-08 13:54:40.529
 !MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-06-12 21:47:55.721
+!MESSAGE Failed to load properties file for project 'parallel-basic-http-client'

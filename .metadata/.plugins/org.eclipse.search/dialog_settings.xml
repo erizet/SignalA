@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="">
-		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
 		<item value="TRUE" key="org.eclipse.jdt.search.resultpage.limit_enabled"/>
 		<item value="1000" key="org.eclipse.jdt.search.resultpage.limit"/>
 	</section>
@@ -15,11 +14,11 @@
 		<item value="1000" key="org.eclipse.jdt.search.resultpage.limit"/>
 	</section>
 	<section name="DialogBounds_SearchDialog">
-		<item value="530" key="DIALOG_WIDTH"/>
+		<item value="618" key="DIALOG_WIDTH"/>
 		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="537" key="DIALOG_HEIGHT"/>
 		<item value="395" key="DIALOG_X_ORIGIN"/>
-		<item value="450" key="DIALOG_HEIGHT"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
@@ -28,6 +27,7 @@
 			<item value="org.eclipse.egit.ui.commitSearchPage"/>
 			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
 			<item value="org.eclipse.pde.internal.ui.search.SearchPage"/>
+			<item value="org.eclipse.cdt.ui.pdomSearchPage"/>
 		</list>
 		<list key="Search.enabledPageIds">
 			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
@@ -35,6 +35,7 @@
 			<item value="org.eclipse.egit.ui.commitSearchPage"/>
 			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
 			<item value="org.eclipse.pde.internal.ui.search.SearchPage"/>
+			<item value="org.eclipse.cdt.ui.pdomSearchPage"/>
 		</list>
 	</section>
 	<section name="org.eclipse.search.text.FileSearchResultPage">
@@ -45,6 +46,9 @@
 		<item value="false" key="REG_EX_SEARCH"/>
 		<item value="true" key="SEARCH_DERIVED"/>
 		<item value="6" key="HISTORY_SIZE"/>
+		<section name="EXTENSIONS">
+			<item value="*" key="0"/>
+		</section>
 		<section name="HISTORY2">
 			<item value="false" key="isRegExSearch"/>
 			<item value="NETWORK_ERROR" key="textPattern"/>
@@ -55,9 +59,6 @@
 			</list>
 			<list key="workingSets">
 			</list>
-		</section>
-		<section name="EXTENSIONS">
-			<item value="*" key="0"/>
 		</section>
 		<section name="HISTORY3">
 			<item value="false" key="isRegExSearch"/>
@@ -116,6 +117,6 @@
 		</section>
 	</section>
 	<section name="SearchDialog.ScopePart">
-		<item value="0" key="scope"/>
+		<item value="3" key="scope"/>
 	</section>
 </section>

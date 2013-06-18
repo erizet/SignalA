@@ -1,0 +1,22 @@
+package com.zsoft.parallelhttpclient;
+
+import com.turbomanage.httpclient.RequestHandler;
+import com.turbomanage.httpclient.android.AndroidHttpClient;
+
+public class ParallelHttpClient extends AndroidHttpClient {
+
+	public ParallelHttpClient() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ParallelHttpClient(String baseUrl) {
+		super(baseUrl);
+		// TODO Auto-generated constructor stub
+	}
+
+	public ParallelHttpClient(String baseUrl, RequestHandler requestHandler) {
+		super(baseUrl, requestHandler);
+		// TODO Auto-generated constructor stub
+	}
+
+}
