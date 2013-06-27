@@ -17,6 +17,7 @@ import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
 import com.zsoft.SignalA.Transport.ProcessResult;
 import com.zsoft.SignalA.Transport.TransportHelper;
+import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
 public class ConnectedState extends StopableStateWithCallback {
 	protected static final String TAG = "ConnectedState";
@@ -95,7 +96,7 @@ public class ConnectedState extends StopableStateWithCallback {
             }
 		};
 
-		AndroidHttpClient httpClient = new AndroidHttpClient();
+		ParallelHttpClient httpClient = new ParallelHttpClient();
 		ParameterMap params = httpClient.newParams()
 		        						.add("data", text.toString());
         httpClient.setMaxRetries(1);
@@ -183,7 +184,7 @@ public class ConnectedState extends StopableStateWithCallback {
 			//mCurrentCallback = cb;
 		}
 
-		AndroidHttpClient httpClient = new AndroidHttpClient(baseUrl);
+		ParallelHttpClient httpClient = new ParallelHttpClient(baseUrl);
 		httpClient.setMaxRetries(1);
 		httpClient.setConnectionTimeout(5000);
 		httpClient.setReadTimeout(115000);

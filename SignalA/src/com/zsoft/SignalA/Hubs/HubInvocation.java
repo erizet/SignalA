@@ -11,9 +11,9 @@ public class HubInvocation {
 	private String mHubName;
 	private String mMethod;
 	private String mCallbackId;
-	private Collection<?> mArgs;
+	private JSONArray mArgs;
 
-	public HubInvocation(String hubName, String method, Collection<?> args, String callbackId) {
+	public HubInvocation(String hubName, String method, JSONArray args, String callbackId) {
 		mHubName = hubName;
 		mMethod = method;
 		mArgs = args;
@@ -36,12 +36,11 @@ public class HubInvocation {
 	}
 
 	public String Serialize() {
-		JSONArray arr = new JSONArray(mArgs);
 		JSONObject json = new JSONObject();
 		try {
 			json.put("I", mCallbackId);
 			json.put("M", mMethod);
-			json.put("A", arr); 
+			json.put("A", mArgs); 
 			json.put("H", mHubName);
 		} catch (JSONException e) {
 			e.printStackTrace();

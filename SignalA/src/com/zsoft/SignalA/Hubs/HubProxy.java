@@ -24,9 +24,15 @@ public class HubProxy implements IHubProxy {
 	}
 
 	
+	public void Invoke(final String method, Collection<?> args,
+			HubInvokeCallback callback) {
+
+		Invoke(method, new JSONArray(args), callback);
+	}
+
 	// Executes a method on the server asynchronously
 	@Override
-	public void Invoke(final String method, Collection<?> args,
+	public void Invoke(final String method, JSONArray args,
 			HubInvokeCallback callback) {
 
 		if (method == null)

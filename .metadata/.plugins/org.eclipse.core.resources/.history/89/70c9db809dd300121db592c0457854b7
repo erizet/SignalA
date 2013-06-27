@@ -1,0 +1,15 @@
+package com.zsoft.parallelhttpclient;
+
+import com.turbomanage.httpclient.AsyncCallback;
+import com.turbomanage.httpclient.AsyncHttpClient;
+import com.turbomanage.httpclient.android.DoHttpRequestTask;
+
+public class DoParallelHttpRequestTask extends DoHttpRequestTask {
+
+	public DoParallelHttpRequestTask(AsyncHttpClient httpClient,
+			AsyncCallback callback) {
+		super(httpClient, callback);
+		// TODO Auto-generated constructor stub
+	}
+
+}

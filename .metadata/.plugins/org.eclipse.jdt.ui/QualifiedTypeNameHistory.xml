@@ -54,4 +54,10 @@
 <fullyQualifiedTypeName name="android.widget.CheckBox"/>
 <fullyQualifiedTypeName name="android.widget.CompoundButton.OnCheckedChangeListener"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask.Status"/>
+<fullyQualifiedTypeName name="com.turbomanage.httpclient.HttpRequest"/>
+<fullyQualifiedTypeName name="android.os.Build"/>
+<fullyQualifiedTypeName name="android.os.AsyncTask"/>
+<fullyQualifiedTypeName name="com.turbomanage.httpclient.AsyncHttpClient"/>
+<fullyQualifiedTypeName name="com.zsoft.parallelhttpclient.ParallelHttpClient"/>
 </qualifiedTypeNameHistroy>
