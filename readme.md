@@ -7,8 +7,14 @@
 
 ##Updates##
 
+###2013-06-27 version 0.11###
+Two fixes in this release.
+https://github.com/erizet/SignalA/issues/11
+https://github.com/erizet/SignalA/issues/22
+
+
 ###2013-02-20 version 0.10beta released###
-I've changed a coupe of things in this realese.
+I've changed a coupe of things in this release.
 - I have changed the transport. LongPolling now uses [basic-http-client][bhc] instead of [Aquery][aq] for http communication. I've removed all dependencies on [Aquery][aq].
 - Hubs is now implemented. Checkout my implementation and say what you think about it. Calling functions on server from client, and calling functions on client from server is supported. NOTE! State is not implemented yet.
 - I've included a new sample, HubDemo, in the repo. It shows how you can implement hubs.
