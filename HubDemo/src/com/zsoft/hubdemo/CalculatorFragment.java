@@ -17,6 +17,7 @@ public class CalculatorFragment extends Fragment {
 
 	protected OnCalculationRequestedListener mListener = null;
 	protected ShowAllListener mShowAllListener = null;
+	protected OnDisconnectionRequestedListener mDisconnectListener = null;
 	protected EditText mValue1TextBox = null; 
 	protected EditText mValue2TextBox = null; 
 	protected RadioButton mPlusButton = null;
@@ -37,6 +38,13 @@ public class CalculatorFragment extends Fragment {
 	    	  calculate(Integer.parseInt(mValue1TextBox.getText().toString()),
 	    			    Integer.parseInt(mValue2TextBox.getText().toString()),
 	    			    mPlusButton.isChecked() ? "Add" : "Sub" );
+	      }
+	    });
+	    Button disconnectButton = (Button) view.findViewById(R.id.btnDisconnect);
+	    disconnectButton.setOnClickListener(new View.OnClickListener() {
+	      @Override
+	      public void onClick(View v) {
+	    	  mDisconnectListener.DisconnectionRequested();
 	      }
 	    });
 	    mShowAllCheckBox = (CheckBox) view.findViewById(R.id.chkShowAllCalculations);
@@ -69,7 +77,11 @@ public class CalculatorFragment extends Fragment {
 			mShowAllListener = (ShowAllListener)activity;
 		}
 
-	}
+		if(activity instanceof OnDisconnectionRequestedListener)
+		{
+			mDisconnectListener = (OnDisconnectionRequestedListener)activity;
+		}
+}
 
 	public interface OnCalculationRequestedListener
 	{

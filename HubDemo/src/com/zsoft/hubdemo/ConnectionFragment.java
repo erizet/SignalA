@@ -13,6 +13,7 @@ import android.widget.EditText;
 public class ConnectionFragment extends Fragment {
 
 	private OnConnectionRequestedListener mListener;
+	private OnDisconnectionRequestedListener mDisconnectListener = null;
 	private EditText mAddressTextBox = null;
 	
 	@Override
@@ -29,6 +30,13 @@ public class ConnectionFragment extends Fragment {
 	    	  requestConnection();
 	      }
 	    });
+	    Button disconnectButton = (Button) view.findViewById(R.id.btnDisconnect);
+	    disconnectButton.setOnClickListener(new View.OnClickListener() {
+	      @Override
+	      public void onClick(View v) {
+	    	  mDisconnectListener.DisconnectionRequested();
+	      }
+	    });
 
 	    return view;
 	}
@@ -43,6 +51,11 @@ public class ConnectionFragment extends Fragment {
 		}
 		else
 			throw new ClassCastException(activity.toString() + " must implemenet ConnectionFragment.OnConnectionRequestedListener");
+
+		if(activity instanceof OnDisconnectionRequestedListener)
+		{
+			mDisconnectListener = (OnDisconnectionRequestedListener)activity;
+		}
 
 	}
 	

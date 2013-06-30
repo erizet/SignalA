@@ -13,5 +13,6 @@
     <string name="value1">Value1</string>
     <string name="show_all_calculations">Show all calculations form all users</string>
     <string name="connect">Connect</string>
-
+    <string name="disconnect">Disconnect</string>
+    
 </resources>

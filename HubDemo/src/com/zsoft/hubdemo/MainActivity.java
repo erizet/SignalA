@@ -22,10 +22,14 @@ import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity implements ConnectionFragment.OnConnectionRequestedListener,
+public class MainActivity extends FragmentActivity implements OnDisconnectionRequestedListener,
+	ConnectionFragment.OnConnectionRequestedListener,
 	CalculatorFragment.ShowAllListener,
 	CalculatorFragment.OnCalculationRequestedListener
 {
+	protected static final String TAG_CONNECTION_FRAGMENT = "connection";	
+	protected static final String TAG_CALCULATION_FRAGMENT = "calculation";
+	
 	protected HubConnection con = null;
 	protected IHubProxy hub = null;
 	protected TextView tvStatus = null;
@@ -38,7 +42,7 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 		
 		tvStatus = (TextView) findViewById(R.id.connection_status);
 		
-		ChangeFragment(new ConnectionFragment(), false);
+		ChangeFragment(new ConnectionFragment(), false, TAG_CONNECTION_FRAGMENT);
 		
 		
 	}
@@ -61,11 +65,17 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 				
 				switch(newState.getState())
 				{
-					case Disconnected:
-						break;
 					case Connected:
 						CalculatorFragment fragment = new CalculatorFragment();
-						ChangeFragment(fragment, true);
+						ChangeFragment(fragment, true, TAG_CALCULATION_FRAGMENT);
+						break;
+					case Disconnected:
+						Fragment f = getSupportFragmentManager().findFragmentByTag(TAG_CALCULATION_FRAGMENT);
+						if (f!=null && f.isVisible()) {
+							getSupportFragmentManager().popBackStackImmediate();
+						}
+						break;
+					default:
 						break;
 				}
 			}
@@ -132,10 +142,10 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 		
 	}
 
-	protected void ChangeFragment(Fragment fragment, Boolean addToBackstack)
+	protected void ChangeFragment(Fragment fragment, Boolean addToBackstack, String tag)
 	{
 		FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
-		trans.replace(R.id.fragment_container, fragment);
+		trans.replace(R.id.fragment_container, fragment, tag);
 		if(addToBackstack)
 			trans.addToBackStack(null);
 		trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -153,4 +163,16 @@ public class MainActivity extends FragmentActivity implements ConnectionFragment
 		return mShowAll;
 	}
 
+	@Override
+	public void DisconnectionRequested() {
+		if(con!=null)
+		{
+			con.Stop();
+		}
+		
+	}
+
 }
+
+
+

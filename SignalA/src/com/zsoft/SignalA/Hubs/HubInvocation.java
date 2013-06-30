@@ -1,7 +1,5 @@
 package com.zsoft.SignalA.Hubs;
 
-import java.util.Collection;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
