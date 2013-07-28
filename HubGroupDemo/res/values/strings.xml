@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HubGroupDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="broadcast_to_all">Broadcast to all</string>
+    <string name="broadcast_to_group">Broadcast to group</string>
+    <string name="group_name">Group name</string>
+    <string name="join_group">Join group</string>
+    <string name="message">Message</string>
+</resources>
