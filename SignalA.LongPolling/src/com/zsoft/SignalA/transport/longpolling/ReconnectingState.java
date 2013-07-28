@@ -2,6 +2,8 @@ package com.zsoft.SignalA.transport.longpolling;
 
 import org.json.JSONObject;
 
+import android.os.Handler;
+
 import com.turbomanage.httpclient.AsyncCallback;
 import com.turbomanage.httpclient.HttpResponse;
 import com.zsoft.SignalA.ConnectionBase;
@@ -84,17 +86,31 @@ public class ReconnectingState extends StopableStateWithCallback {
                 }
                 finally
                 {
-					mIsRunning.set(false);
-
-					// Loop if we are still reconnecting
 					if(mConnection.getCurrentState() == ReconnectingState.this)
-						Run();
+					{
+						// Delay before reconnecting
+						Delay(2000, new DelayCallback() {
+							
+							@Override
+							public void OnStopedBeforeElapsed() {
+								mIsRunning.set(false);
+								mConnection.SetNewState(new DisconnectedState(mConnection));
+							}
+							
+							@Override
+							public void OnDelayElapsed() {
+								mIsRunning.set(false);
+								// Loop if we are still reconnecting
+								Run();
+							}
+						});
+					}
                 }
 			}
            @Override
             public void onError(Exception ex) {
 				mConnection.setError(ex);
-				mConnection.SetNewState(new DisconnectedState(mConnection));
+				
 			}
 		};
 
@@ -108,5 +124,34 @@ public class ReconnectingState extends StopableStateWithCallback {
         httpClient.post(url, null, cb);
 	}
 
+	protected void Delay(final long milliSeconds, final DelayCallback cb) {
+		final long startTime = System.currentTimeMillis();
+		final Handler handler = new Handler();
+		final Runnable runnable = new Runnable() {
+		  @Override
+		  public void run() {
+			  if(DoStop()) {
+				  cb.OnStopedBeforeElapsed();
+			  }
+			  else {
+				  long difference = System.currentTimeMillis() - startTime;
+				  if(difference < milliSeconds) {
+					  handler.postDelayed(this, 500);
+				  }
+				  else {
+					  	cb.OnDelayElapsed();
+				  }
+			  }
+				  
+		  }
+		};
+		
+		handler.postDelayed(runnable, 500);
+	}
 
+	private abstract class DelayCallback {
+		public abstract void OnDelayElapsed();
+		public abstract void OnStopedBeforeElapsed();
+	}
+	
 }

@@ -68,17 +68,13 @@ public class ConnectedState extends StopableStateWithCallback {
             	if(httpResponse.getStatus() == 200)
             	{
 					Log.v(TAG, "Message sent: " + text);
+					sendCb.OnSent(text);
+					
 					JSONObject json = JSONHelper.ToJSONObject(httpResponse.getBodyAsString());
-					ProcessResult result = TransportHelper.ProcessResponse(mConnection, json);
-            		if(result.processingFailed)
+					
+					if(json!=null && json.length()>0)
             		{
-    					Exception ex = new Exception("Error processing respone after sending.");
-    					mConnection.setError(ex);
-    					sendCb.OnError(ex);
-            		}
-            		else
-            		{
-            			sendCb.OnSent(text);
+            			mConnection.setMessage(json);
             		}
             	}
 				else
