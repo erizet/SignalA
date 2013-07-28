@@ -1,7 +1,0 @@
-package com.zsoft.hubdemo;
-
-import android.support.v4.app.Fragment;
-
-public class ConnectionFragment extends Fragment {
-
-}

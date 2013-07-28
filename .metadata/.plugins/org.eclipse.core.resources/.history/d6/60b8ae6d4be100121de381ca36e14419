@@ -1,5 +1,0 @@
-package com.zsoft.hubdemo;
-
-public interface OnDisconnectionRequestedListener {
-
-}

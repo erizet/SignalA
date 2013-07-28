@@ -1,7 +1,0 @@
-package com.zsoft.hubdemo;
-
-import Fragment;
-
-public class CalculatorFragment extends Fragment {
-
-}

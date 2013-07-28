@@ -1,9 +1,0 @@
-package com.zsoft.parallelhttpclient;
-
-public class ParallelAsyncTaskFactory {
-
-	public ParallelAsyncTaskFactory() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
