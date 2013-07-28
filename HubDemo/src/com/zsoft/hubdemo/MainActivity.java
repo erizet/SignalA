@@ -79,7 +79,7 @@ public class MainActivity extends FragmentActivity implements OnDisconnectionReq
 						break;
 				}
 			}
-			
+				
 			@Override
 			public void OnError(Exception exception) {
 	            Toast.makeText(MainActivity.this, "On error: " + exception.getMessage(), Toast.LENGTH_LONG).show();
