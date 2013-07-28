@@ -23,7 +23,6 @@ public class ConnectedState extends StopableStateWithCallback {
 	private Object mCallbackLock = new Object();
 	//@SuppressWarnings("unused")
 	//private AjaxCallback<JSONObject> mCurrentCallback = null;
-	private boolean mUseConnect = true;
 	
 	public ConnectedState(ConnectionBase connection) {
 		super(connection);
@@ -106,15 +105,13 @@ public class ConnectedState extends StopableStateWithCallback {
 	    String baseUrl = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
 	    String url = "";
 
-	    //if (mConnection.getMessageId() == null)
-		if (mUseConnect)
+	    if (mConnection.getMessageId() == null || mConnection.getMessageId().length()==0)
 		{
 			url += "connect";
-			mUseConnect = false;
 		}
 	    else
 	    {
-			url += "reconnect";
+			url += "poll";
 	    }
 
 //	    url += TransportHelper.GetReceiveQueryString(mConnection, null, TRANSPORT_NAME);
