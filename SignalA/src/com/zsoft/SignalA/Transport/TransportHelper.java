@@ -39,7 +39,7 @@ public class TransportHelper {
 		result.disconnected = response.optInt("D") == 1;
 		newMessageId = response.optString("C");
 		messagesArray = response.optJSONArray("M");
-		groupsToken = response.optString("G");
+		groupsToken = response.optString("G", null);
 		info = response.optString("I", null);
 
 		if(info != null)
