@@ -7,6 +7,11 @@
 
 ##Updates##
 
+###2013-07-31 version 0.12###
+Fixed handling of groupstoken.
+Removed .metadata folder from repo.
+Use 'poll' instead of 'reconect' in urls for polling the server.
+
 ###2013-06-27 version 0.11###
 Two fixes in this release.
 https://github.com/erizet/SignalA/issues/11
