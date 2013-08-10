@@ -46,29 +46,7 @@ public class MainActivity extends Activity {
 	    mJoinGroupButton.setOnClickListener(new View.OnClickListener() {
 	      @Override
 	      public void onClick(View v) {
-	  		HubInvokeCallback callback = new HubInvokeCallback() {
-				@Override
-				public void OnResult(boolean succeeded, String response) {
-					if(succeeded)
-					{
-						Toast.makeText(MainActivity.this, "Joined group", Toast.LENGTH_SHORT).show();
-					}
-					else
-					{
-						Toast.makeText(MainActivity.this, "Failed to join group", Toast.LENGTH_SHORT).show();
-					}
-				}
-				
-				@Override
-				public void OnError(Exception ex) {
-					Toast.makeText(MainActivity.this, "Error: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
-				}
-			};
-			
-			List<String> args = new ArrayList<String>(1);
-			args.add(mGroupNameTextBox.getText().toString());
-			hub.Invoke("JoinGroup", args, callback);
-
+	  		JoinGroup(mGroupNameTextBox.getText().toString());
 	      }
 	    });
 	    mBroadcastToAllButton = (Button) this.findViewById(R.id.broadcastToAllButton);
@@ -135,6 +113,8 @@ public class MainActivity extends Activity {
 						mJoinGroupButton.setEnabled(true);
 						mBroadcastToAllButton.setEnabled(true);
 						mBroadcastToGroupButton.setEnabled(true);
+						
+						JoinGroup("test");
 						break;
 					default:
 						mJoinGroupButton.setEnabled(false);
@@ -180,6 +160,32 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+
+	private void JoinGroup(String groupName) {
+		HubInvokeCallback callback = new HubInvokeCallback() {
+			@Override
+			public void OnResult(boolean succeeded, String response) {
+				if(succeeded)
+				{
+					Toast.makeText(MainActivity.this, "Joined group", Toast.LENGTH_SHORT).show();
+				}
+				else
+				{
+					Toast.makeText(MainActivity.this, "Failed to join group", Toast.LENGTH_SHORT).show();
+				}
+			}
+			
+			@Override
+			public void OnError(Exception ex) {
+				Toast.makeText(MainActivity.this, "Error: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
+			}
+		};
+		
+		List<String> args = new ArrayList<String>(1);
+		args.add(groupName);
+		hub.Invoke("JoinGroup", args, callback);
 	}
 
 }
