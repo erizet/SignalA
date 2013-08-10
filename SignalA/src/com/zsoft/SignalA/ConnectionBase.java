@@ -47,10 +47,10 @@ public abstract class ConnectionBase {
     		}
 		}
 
-    	// Fire event
-    	OnStateChanged(oldState, state);
-    	
         state.Run();
+
+        // Fire event
+    	OnStateChanged(oldState, state);
     }
 
 	public String getUrl() {
