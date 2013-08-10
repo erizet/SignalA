@@ -17,8 +17,15 @@ public abstract class ConnectionBase {
 	private String mMessageId = null;
 	private ITransport mTransport;
 	private String mGroupsToken = null;
+	private String mQueryString = null;
+
+    public ConnectionBase(String url, Context context, ITransport transport, String queryString)
+    {
+    	this(url, context, transport);
+    	setQueryString(queryString);
+    }
 	
-    public ConnectionBase(String url, Context context, ITransport transport)
+	public ConnectionBase(String url, Context context, ITransport transport)
     {
     	mContext = context;
     	mTransport = transport;
@@ -57,6 +64,14 @@ public abstract class ConnectionBase {
 	public Context getContext() {
 		return mContext;
 	}
+
+    private void setQueryString(String queryString) {
+		mQueryString = queryString;
+	}
+
+    public String getQueryString() {
+    	return mQueryString;
+    }
 
 	public String getConnectionId() {
 		return mConnectionId ;

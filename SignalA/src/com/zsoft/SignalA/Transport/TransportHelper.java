@@ -123,6 +123,15 @@ public class TransportHelper {
 			}
         }
 
+        if(connection.getQueryString() != null && connection.getQueryString().length() > 0)
+        {
+            try {
+				qs += "&" + URLEncoder.encode(connection.getQueryString(), "utf-8");
+			} catch (UnsupportedEncodingException e) {
+				Log.e(TAG, "Unsupported message encoding error, when encoding querystring.");
+			}
+        }
+
         return qs;
     }
 
@@ -142,5 +151,43 @@ public class TransportHelper {
 		
 		return list;
 	}
+
+    public static String AppendCustomQueryString(ConnectionBase connection, String baseUrl)
+    {
+        if (connection == null)
+        {
+            throw new IllegalArgumentException("connection");
+        }
+
+        if (baseUrl == null)
+        {
+            baseUrl = "";
+        }
+
+        String appender = "",
+               customQuery = connection.getQueryString(),
+               qs = "";
+
+        if (customQuery!=null && customQuery.length()>0)
+        {
+            char firstChar = customQuery.charAt(0);
+
+            // If the custom query string already starts with an ampersand or question mark
+            // then we dont have to use any appender, it can be empty.
+            if (firstChar != '?' && firstChar != '&')
+            {
+                appender = "?";
+
+                if (baseUrl.contains(appender))
+                {
+                    appender = "&";
+                }
+            }
+
+            qs += appender + customQuery;
+        }
+
+        return qs;
+    }
 
 }

@@ -58,6 +58,7 @@ public class ConnectedState extends StopableStateWithCallback {
 		} catch (UnsupportedEncodingException e) {
 			Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
 		}
+		TransportHelper.AppendCustomQueryString(mConnection, url);
 
 		AsyncCallback cb = new AsyncCallback() 
 		{

@@ -9,6 +9,7 @@ import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.SendCallback;
+import com.zsoft.SignalA.Transport.TransportHelper;
 import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
 public class ConnectingState extends StopableStateWithCallback {
@@ -36,6 +37,7 @@ public class ConnectingState extends StopableStateWithCallback {
 
         // negotiate
 		String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") + "negotiate";
+		TransportHelper.AppendCustomQueryString(mConnection, url);
 		AsyncCallback cb = new AsyncCallback() {
 			
 			@Override
