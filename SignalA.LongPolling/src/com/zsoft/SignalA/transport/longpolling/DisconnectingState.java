@@ -12,6 +12,7 @@ import com.zsoft.SignalA.ConnectionBase;
 import com.zsoft.SignalA.ConnectionState;
 import com.zsoft.SignalA.SignalAUtils;
 import com.zsoft.SignalA.Transport.StateBase;
+import com.zsoft.SignalA.Transport.TransportHelper;
 import com.zsoft.SignalA.SendCallback;
 import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
@@ -49,6 +50,7 @@ public class DisconnectingState extends StateBase {
 		} catch (UnsupportedEncodingException e) {
 			Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
 		}
+		TransportHelper.AppendCustomQueryString(mConnection, url);
 
 		AsyncCallback cb = new AsyncCallback() {
 			
