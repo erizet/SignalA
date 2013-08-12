@@ -7,6 +7,10 @@
 
 ##Updates##
 
+###2013-08-12 version 0.13###
+- I've introduced the ability to send a custom querystring. https://github.com/erizet/SignalA/issues/24
+- Changed when OnStateChanged is fired. Now the event is fired AFTER the new state is run. See https://github.com/erizet/SignalA/issues/21#issuecomment-22296485 
+
 ###2013-07-31 version 0.12###
 - Fixed handling of groupstoken.
 - Removed .metadata folder from repo.
