@@ -16,3 +16,7 @@ gen/
 local.properties
 
 .metadata/
+
+# IDEA Project
+*/.idea/*
+*/*.iml

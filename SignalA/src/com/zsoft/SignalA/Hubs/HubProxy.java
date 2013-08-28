@@ -90,7 +90,6 @@ public class HubProxy implements IHubProxy {
 		}
 	}
 	
-	// Kör event lokalt som anropas från servern och som registrerats i ON-metod.
     public void InvokeEvent(String eventName, JSONArray args)
     {
         HubOnDataCallback subscription;
