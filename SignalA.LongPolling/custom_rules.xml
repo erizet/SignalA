@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <target name="debug.dist" depends="clean,debug">
+        <mkdir dir="dist/debug"/>
+        <copy file="../SignalA/bin/classes.jar" tofile="dist/debug/signala.jar"/>
+        <copy file="../parallel-basic-http-client/bin/classes.jar" tofile="dist/debug/parallel-basic-http-client.jar"/>
+        <copy file="../parallel-basic-http-client/libs/basic-http-client-android-0.88.jar" tofile="dist/debug/basic-http-client-android-0.88.jar"/>
+        <copy file="bin/classes.jar" tofile="dist/debug/signala.longpolling.jar"/>
+    </target>
+
+    <target name="release.dist" depends="clean,release">
+        <mkdir dir="dist/release"/>
+        <copy file="../SignalA/bin/classes.jar" tofile="dist/release/signala.jar"/>
+        <copy file="../parallel-basic-http-client/bin/classes.jar" tofile="dist/release/parallel-basic-http-client.jar"/>
+        <copy file="../parallel-basic-http-client/libs/basic-http-client-android-0.88.jar" tofile="dist/release/basic-http-client-android-0.88.jar"/>
+        <copy file="bin/classes.jar" tofile="dist/release/signala.longpolling.jar"/>
+    </target>
+
+    <target name="dist.debug.clean" depends="clean">
+        <delete dir="dist/debug"/>
+    </target>
+
+    <target name="dist.release.clean" depends="clean">
+        <delete dir="dist/release"/>
+    </target>
+
+    <target name="dist.clean" depends="clean">
+        <delete dir="dist"/>
+    </target>
+</project>
