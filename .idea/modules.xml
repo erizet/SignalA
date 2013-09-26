@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Demo/Demo.iml" filepath="$PROJECT_DIR$/Demo/Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HubDemo/HubDemo.iml" filepath="$PROJECT_DIR$/HubDemo/HubDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HubGroupDemo/HubGroupDemo.iml" filepath="$PROJECT_DIR$/HubGroupDemo/HubGroupDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SignalA/SignalA.iml" filepath="$PROJECT_DIR$/SignalA/SignalA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SignalA.LongPolling/SignalA.LongPolling.iml" filepath="$PROJECT_DIR$/SignalA.LongPolling/SignalA.LongPolling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SignalAProject.iml" filepath="$PROJECT_DIR$/SignalAProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parallel-basic-http-client/parallel-basic-http-client.iml" filepath="$PROJECT_DIR$/parallel-basic-http-client/parallel-basic-http-client.iml" />
+    </modules>
+  </component>
+</project>
+

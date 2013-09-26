@@ -1,0 +1,1 @@
+include ':SignalA', ':parallel-basic-http-client', ':SignalA.LongPolling', ':Demo', ':HubDemo', ':HubGroupDemo'

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="android-query-full.0.24.2-beta">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Demo/libs/android-query-full.0.24.2-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
