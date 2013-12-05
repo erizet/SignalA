@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="parallel-basic-http-client-libs-basic-http-client-android-0.88.jar-basic-http-client-android-0.88">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/parallel-basic-http-client/libs/basic-http-client-android-0.88.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
