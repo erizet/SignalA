@@ -7,6 +7,10 @@
 
 ##Updates##
 
+###2014-01-01 version 0.14###
+- Converted project to Android Studio and Gradle.
+- Published SignalA on Maven Central.
+
 ###2013-08-12 version 0.13###
 - I've introduced the ability to send a custom querystring. https://github.com/erizet/SignalA/issues/24
 - Changed when OnStateChanged is fired. Now the event is fired AFTER the new state is run. See https://github.com/erizet/SignalA/issues/21#issuecomment-22296485 
@@ -41,9 +45,9 @@ Http-requests in the Long polling library is using [basic-http-client][bhc].
 ##Add SignalA to your project##
 SignalA is published on Maven Central as a ARR. If you're using Android Studio/Gradle all you have to do is add it on your gradle build:
 
-dependencies {
-    compile 'com.github.erizet.signala:signala-longpolling:0.14'
-}
+	dependencies {
+	    compile 'com.github.erizet.signala:signala-longpolling:0.14'
+	}
 
 ##How to use?##
 Add the following code to your activity.
