@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.6.+'
+        classpath 'com.android.tools.build:gradle:0.7.+'
     }
 }
 apply plugin: 'android-library'
@@ -25,3 +25,6 @@ android {
 dependencies {
     compile files('libs/basic-http-client-android-0.88.jar');
 }
+
+apply from: '../maven_push.gradle'
+
