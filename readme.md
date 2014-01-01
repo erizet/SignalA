@@ -7,6 +7,9 @@
 
 ##Updates##
 
+###2013-07-31 version 0.14###
+
+
 ###2013-07-31 version 0.12###
 - Fixed handling of groupstoken.
 - Removed .metadata folder from repo.
@@ -34,10 +37,15 @@ It has also (beta)support for groups.
 SignalA is a [SignalR][sr]-client for Android. It's implemented as a Android-library. At this moment is long polling the only implemented transport. Long polling is a separate library.
 Http-requests in the Long polling library is using [basic-http-client][bhc].
 
-##How to use?##
+##Add SignalA to your project##
+SignalA is published on Maven Central as a ARR. If you're using Android Studio/Gradle all you have to do is add it on your gradle build:
 
-To use SignalA you have to get a copy of the two libraries, SignalA and SignalA.LongPolling. Add a reference to SignalA.LongPolling under Properties > Android > Library.
-Then add the following code to your activity.
+dependencies {
+    compile 'com.github.erizet.signala:signala-longpolling:0.14'
+}
+
+##How to use?##
+Add the following code to your activity.
 
       String url = "http://<address to your SignalR-server>";
       con = new com.zsoft.SignalA.Connection(url, this, new LongPollingTransport()) {
@@ -76,7 +84,7 @@ That's it!
 For a complete sample see the Demo-project.
 
 ##Limitations##
-Hubs dont supprt State yet.
+Hubs don't support State yet.
 
 ##Contributions##
 I'll be more than happy to get contributions!!!
