@@ -2,6 +2,7 @@ package com.zsoft.SignalA.transport.longpolling;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Map;
 
 import org.json.JSONObject;
 
@@ -92,6 +93,10 @@ public class ConnectedState extends StopableStateWithCallback {
 		};
 
 		ParallelHttpClient httpClient = new ParallelHttpClient();
+        for (Map.Entry<String, String> entry : mConnection.getHeaders().entrySet())
+        {
+            httpClient.addHeader(entry.getKey(), entry.getValue());
+        }
 		ParameterMap params = httpClient.newParams()
 		        						.add("data", text.toString());
         httpClient.setMaxRetries(1);
@@ -181,6 +186,10 @@ public class ConnectedState extends StopableStateWithCallback {
 		httpClient.setMaxRetries(1);
 		httpClient.setConnectionTimeout(5000);
 		httpClient.setReadTimeout(115000);
+        for (Map.Entry<String, String> entry : mConnection.getHeaders().entrySet())
+        {
+            httpClient.addHeader(entry.getKey(), entry.getValue());
+        }
 		ParameterMap params = httpClient.newParams();
 		httpClient.post(url, params, cb);
 	}

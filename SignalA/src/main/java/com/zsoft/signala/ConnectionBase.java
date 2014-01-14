@@ -7,6 +7,9 @@ import com.zsoft.SignalA.Transport.StateBase;
 
 import android.content.Context;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public abstract class ConnectionBase {
 	private Object mStateLock = new Object();
     private StateBase mCurrentState = null;
@@ -18,6 +21,7 @@ public abstract class ConnectionBase {
 	private ITransport mTransport;
 	private String mGroupsToken = null;
 	private String mQueryString = null;
+	private Map<String, String> mHeaders = new TreeMap<String, String>();
 
     public ConnectionBase(String url, Context context, ITransport transport, String queryString)
     {
@@ -127,6 +131,13 @@ public abstract class ConnectionBase {
 	{
 		OnError(exception);
 	}
+
+    public void addHeader(String header, String value)
+    {
+        mHeaders.put(header, value);
+    }
+
+    public Map<String, String> getHeaders() { return mHeaders; }
 	
 	// Methods for the user to implement
 	
@@ -152,5 +163,5 @@ public abstract class ConnectionBase {
 
 
 
-    
+
 }
