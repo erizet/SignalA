@@ -12,6 +12,8 @@ import com.zsoft.SignalA.SendCallback;
 import com.zsoft.SignalA.Transport.TransportHelper;
 import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
+import java.util.Map;
+
 public class ConnectingState extends StopableStateWithCallback {
 	public ConnectingState(ConnectionBase connection) {
 		super(connection);
@@ -100,6 +102,10 @@ public class ConnectingState extends StopableStateWithCallback {
 		
 		ParallelHttpClient httpClient = new ParallelHttpClient();
         httpClient.setMaxRetries(1);
+        for (Map.Entry<String, String> entry : mConnection.getHeaders().entrySet())
+        {
+            httpClient.addHeader(entry.getKey(), entry.getValue());
+        }
         httpClient.get(url, null, cb);
 	}
 

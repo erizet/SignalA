@@ -2,6 +2,7 @@ package com.zsoft.SignalA.transport.longpolling;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Map;
 
 import android.util.Log;
 
@@ -74,6 +75,10 @@ public class DisconnectingState extends StateBase {
 
 		ParallelHttpClient httpClient = new ParallelHttpClient();
 		httpClient.setMaxRetries(1);
+        for (Map.Entry<String, String> entry : mConnection.getHeaders().entrySet())
+        {
+            httpClient.addHeader(entry.getKey(), entry.getValue());
+        }
 		ParameterMap params = httpClient.newParams();
 		httpClient.post(url, params, cb);
 	}
