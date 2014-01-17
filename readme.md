@@ -7,6 +7,9 @@
 
 ##Updates##
 
+###2014-01-17 version 0.15###
+- Added support for custom headers, [52a75bca5f15a0d242c3f6acd02cde7637e6582b](https://github.com/erizet/SignalA/commit/52a75bca5f15a0d242c3f6acd02cde7637e6582b). Thanks to [egoetschalckx](https://github.com/egoetschalckx).
+
 ###2014-01-01 version 0.14###
 - Converted project to Android Studio and Gradle.
 - Published SignalA on Maven Central.
@@ -46,7 +49,7 @@ Http-requests in the Long polling library is using [basic-http-client][bhc].
 SignalA is published on Maven Central as a ARR. If you're using Android Studio/Gradle all you have to do is add it on your gradle build:
 
 	dependencies {
-	    compile 'com.github.erizet.signala:signala-longpolling:0.14'
+	    compile 'com.github.erizet.signala:signala-longpolling:0.15'
 	}
 
 ##How to use?##
