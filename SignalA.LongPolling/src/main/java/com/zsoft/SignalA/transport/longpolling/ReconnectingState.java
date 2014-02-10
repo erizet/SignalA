@@ -123,6 +123,8 @@ public class ReconnectingState extends StopableStateWithCallback {
 
 		ParallelHttpClient httpClient = new ParallelHttpClient();
         httpClient.setMaxRetries(1);
+        httpClient.setConnectionTimeout(5000);
+	httpClient.setReadTimeout(115000);
         for (Map.Entry<String, String> entry : mConnection.getHeaders().entrySet())
         {
             httpClient.addHeader(entry.getKey(), entry.getValue());
