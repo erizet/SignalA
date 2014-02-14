@@ -1,4 +1,4 @@
-package com.zsoft.SignalA;
+package com.zsoft.signala;
 
 public abstract class SendCallback {
 	public abstract void OnSent(CharSequence messageSent);

@@ -1,8 +1,8 @@
-package com.zsoft.SignalA.transport.longpolling;
+package com.zsoft.signala.transport.longpolling;
 
-import com.zsoft.SignalA.ConnectionBase;
-import com.zsoft.SignalA.Transport.ITransport;
-import com.zsoft.SignalA.Transport.StateBase;
+import com.zsoft.signala.ConnectionBase;
+import com.zsoft.signala.transport.ITransport;
+import com.zsoft.signala.transport.StateBase;
 
 public class LongPollingTransport implements ITransport {
 

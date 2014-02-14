@@ -1,6 +1,6 @@
-package com.zsoft.SignalA.Transport;
+package com.zsoft.signala.transport;
 
-import com.zsoft.SignalA.ConnectionBase;
+import com.zsoft.signala.ConnectionBase;
 
 public interface ITransport {
 	StateBase CreateInitialState(ConnectionBase connectionBase);

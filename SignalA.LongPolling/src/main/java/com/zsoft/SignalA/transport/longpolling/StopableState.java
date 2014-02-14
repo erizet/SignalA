@@ -1,9 +1,9 @@
-package com.zsoft.SignalA.transport.longpolling;
+package com.zsoft.signala.transport.longpolling;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.zsoft.SignalA.ConnectionBase;
-import com.zsoft.SignalA.Transport.StateBase;
+import com.zsoft.signala.ConnectionBase;
+import com.zsoft.signala.transport.StateBase;
 
 public abstract class StopableState extends StateBase {
 	protected AtomicBoolean requestStop = new AtomicBoolean(false);

@@ -1,6 +1,6 @@
-package com.zsoft.SignalA.transport.longpolling;
+package com.zsoft.signala.transport.longpolling;
 
-import com.zsoft.SignalA.ConnectionBase;
+import com.zsoft.signala.ConnectionBase;
 
 public abstract class StopableStateWithCallback extends StopableState {
 	protected Object mCallbackLock = new Object();

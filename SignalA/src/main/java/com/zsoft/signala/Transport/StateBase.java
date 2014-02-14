@@ -1,10 +1,10 @@
-package com.zsoft.SignalA.Transport;
+package com.zsoft.signala.transport;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.zsoft.SignalA.ConnectionBase;
-import com.zsoft.SignalA.ConnectionState;
-import com.zsoft.SignalA.SendCallback;
+import com.zsoft.signala.ConnectionBase;
+import com.zsoft.signala.ConnectionState;
+import com.zsoft.signala.SendCallback;
 
 public abstract class StateBase {
     protected ConnectionBase mConnection;

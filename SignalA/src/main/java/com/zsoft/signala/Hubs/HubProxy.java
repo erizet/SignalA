@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.Hubs;
+package com.zsoft.signala.hubs;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import org.json.JSONArray;
 
 import android.util.Log;
 
-import com.zsoft.SignalA.SendCallback;
+import com.zsoft.signala.SendCallback;
 
 public class HubProxy implements IHubProxy {
     protected static final String TAG = "HubProxy";
@@ -90,7 +90,7 @@ public class HubProxy implements IHubProxy {
 		}
 	}
 	
-	// Kör event lokalt som anropas från servern och som registrerats i ON-metod.
+	// Kï¿½r event lokalt som anropas frï¿½n servern och som registrerats i ON-metod.
     public void InvokeEvent(String eventName, JSONArray args)
     {
         HubOnDataCallback subscription;

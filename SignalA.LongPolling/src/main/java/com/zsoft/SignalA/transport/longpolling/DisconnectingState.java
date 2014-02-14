@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.transport.longpolling;
+package com.zsoft.signala.transport.longpolling;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -9,12 +9,12 @@ import android.util.Log;
 import com.turbomanage.httpclient.AsyncCallback;
 import com.turbomanage.httpclient.HttpResponse;
 import com.turbomanage.httpclient.ParameterMap;
-import com.zsoft.SignalA.ConnectionBase;
-import com.zsoft.SignalA.ConnectionState;
-import com.zsoft.SignalA.SignalAUtils;
-import com.zsoft.SignalA.Transport.StateBase;
-import com.zsoft.SignalA.Transport.TransportHelper;
-import com.zsoft.SignalA.SendCallback;
+import com.zsoft.signala.ConnectionBase;
+import com.zsoft.signala.ConnectionState;
+import com.zsoft.signala.SignalAUtils;
+import com.zsoft.signala.transport.StateBase;
+import com.zsoft.signala.transport.TransportHelper;
+import com.zsoft.signala.SendCallback;
 import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
 public class DisconnectingState extends StateBase {

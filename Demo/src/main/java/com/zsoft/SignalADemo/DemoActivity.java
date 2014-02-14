@@ -7,20 +7,20 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.util.Constants;
-import com.zsoft.SignalA.Transport.StateBase;
-import com.zsoft.SignalA.transport.longpolling.LongPollingTransport;
+import com.zsoft.signala.transport.StateBase;
+import com.zsoft.signala.transport.longpolling.LongPollingTransport;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.zsoft.SignalA.SendCallback;
+import com.zsoft.signala.SendCallback;
 
 public class DemoActivity extends Activity {
 
 	private AQuery aq;
-	private com.zsoft.SignalA.Connection con = null;
+	private com.zsoft.signala.Connection con = null;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class DemoActivity extends Activity {
 		aq.id(R.id.tvReceivedMessage).text("No message yet");
 		aq.id(R.id.btnDelayTest).clicked(this, "delayTest");
 	    
-	    con = new com.zsoft.SignalA.Connection(url, this, new LongPollingTransport()) {
+	    con = new com.zsoft.signala.Connection(url, this, new LongPollingTransport()) {
 
 			@Override
 			public void OnError(Exception exception) {

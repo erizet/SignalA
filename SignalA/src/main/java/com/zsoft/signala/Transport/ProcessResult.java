@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.Transport;
+package com.zsoft.signala.transport;
 
 public class ProcessResult {
 	public boolean timedOut = false;

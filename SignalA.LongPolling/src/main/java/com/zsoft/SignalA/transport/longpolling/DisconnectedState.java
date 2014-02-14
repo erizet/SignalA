@@ -1,11 +1,11 @@
-package com.zsoft.SignalA.transport.longpolling;
+package com.zsoft.signala.transport.longpolling;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.zsoft.SignalA.ConnectionBase;
-import com.zsoft.SignalA.ConnectionState;
-import com.zsoft.SignalA.Transport.StateBase;
-import com.zsoft.SignalA.SendCallback;
+import com.zsoft.signala.ConnectionBase;
+import com.zsoft.signala.ConnectionState;
+import com.zsoft.signala.transport.StateBase;
+import com.zsoft.signala.SendCallback;
 
 public class DisconnectedState extends StateBase {
 	private AtomicBoolean requestStart = new AtomicBoolean(false);

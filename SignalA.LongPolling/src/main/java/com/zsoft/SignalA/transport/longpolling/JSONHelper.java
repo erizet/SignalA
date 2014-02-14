@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.transport.longpolling;
+package com.zsoft.signala.transport.longpolling;
 
 import org.json.JSONException;
 import org.json.JSONObject;

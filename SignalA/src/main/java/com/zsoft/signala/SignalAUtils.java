@@ -1,4 +1,4 @@
-package com.zsoft.SignalA;
+package com.zsoft.signala;
 
 public class SignalAUtils {
 	public static String EnsureEndsWith(String text, String end)

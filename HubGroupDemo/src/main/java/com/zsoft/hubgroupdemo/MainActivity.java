@@ -5,12 +5,12 @@ import java.util.List;
 
 import org.json.JSONArray;
 
-import com.zsoft.SignalA.Hubs.HubConnection;
-import com.zsoft.SignalA.Hubs.HubInvokeCallback;
-import com.zsoft.SignalA.Hubs.HubOnDataCallback;
-import com.zsoft.SignalA.Hubs.IHubProxy;
-import com.zsoft.SignalA.Transport.StateBase;
-import com.zsoft.SignalA.transport.longpolling.LongPollingTransport;
+import com.zsoft.signala.hubs.HubConnection;
+import com.zsoft.signala.hubs.HubInvokeCallback;
+import com.zsoft.signala.hubs.HubOnDataCallback;
+import com.zsoft.signala.hubs.IHubProxy;
+import com.zsoft.signala.transport.StateBase;
+import com.zsoft.signala.transport.longpolling.LongPollingTransport;
 
 import android.net.Uri;
 import android.os.Bundle;

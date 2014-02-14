@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.Transport;
+package com.zsoft.signala.transport;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -10,7 +10,7 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-import com.zsoft.SignalA.ConnectionBase;
+import com.zsoft.signala.ConnectionBase;
 
 public class TransportHelper {
     private static final String TAG = "TransportHelper";

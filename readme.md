@@ -7,6 +7,10 @@
 
 ##Updates##
 
+###2014-02-14 version 0.16###
+- Set timeouts before reconnecting, [9d2af153444e318ed7611f5b28d76729c3b0ac57](https://github.com/mrbirdman/SignalA/commit/9d2af153444e318ed7611f5b28d76729c3b0ac57). Thanks to [mrbirdman](https://github.com/mrbirdman).
+- Changed package names to lowercase.
+
 ###2014-01-17 version 0.15###
 - Added support for custom headers, [52a75bca5f15a0d242c3f6acd02cde7637e6582b](https://github.com/erizet/SignalA/commit/52a75bca5f15a0d242c3f6acd02cde7637e6582b). Thanks to [egoetschalckx](https://github.com/egoetschalckx).
 
@@ -56,7 +60,7 @@ SignalA is published on Maven Central as a ARR. If you're using Android Studio/G
 Add the following code to your activity.
 
       String url = "http://<address to your SignalR-server>";
-      con = new com.zsoft.SignalA.Connection(url, this, new LongPollingTransport()) {
+      con = new com.zsoft.signala.Connection(url, this, new LongPollingTransport()) {
 
 			@Override
 			public void OnError(Exception exception) {

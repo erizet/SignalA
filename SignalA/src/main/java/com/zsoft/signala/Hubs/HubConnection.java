@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.Hubs;
+package com.zsoft.signala.hubs;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,11 +12,11 @@ import android.content.Context;
 import android.content.OperationApplicationException;
 import android.util.Log;
 
-import com.zsoft.SignalA.ConnectionState;
-import com.zsoft.SignalA.Transport.ITransport;
-import com.zsoft.SignalA.Transport.StateBase;
+import com.zsoft.signala.ConnectionState;
+import com.zsoft.signala.transport.ITransport;
+import com.zsoft.signala.transport.StateBase;
 
-public class HubConnection extends com.zsoft.SignalA.ConnectionBase {
+public class HubConnection extends com.zsoft.signala.ConnectionBase {
 	
     private static final String TAG = null;
 	private final Map<String, HubProxy> mHubs = new HashMap<String, HubProxy>();

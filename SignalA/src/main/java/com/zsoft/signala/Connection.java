@@ -1,9 +1,9 @@
-package com.zsoft.SignalA;
+package com.zsoft.signala;
 
 import android.content.Context;
 
-import com.zsoft.SignalA.Transport.ITransport;
-import com.zsoft.SignalA.Transport.StateBase;
+import com.zsoft.signala.transport.ITransport;
+import com.zsoft.signala.transport.StateBase;
 
 public class Connection extends ConnectionBase {
 

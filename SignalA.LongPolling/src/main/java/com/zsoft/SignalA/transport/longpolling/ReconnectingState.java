@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.transport.longpolling;
+package com.zsoft.signala.transport.longpolling;
 
 import org.json.JSONObject;
 
@@ -6,12 +6,12 @@ import android.os.Handler;
 
 import com.turbomanage.httpclient.AsyncCallback;
 import com.turbomanage.httpclient.HttpResponse;
-import com.zsoft.SignalA.ConnectionBase;
-import com.zsoft.SignalA.ConnectionState;
-import com.zsoft.SignalA.SignalAUtils;
-import com.zsoft.SignalA.SendCallback;
-import com.zsoft.SignalA.Transport.ProcessResult;
-import com.zsoft.SignalA.Transport.TransportHelper;
+import com.zsoft.signala.ConnectionBase;
+import com.zsoft.signala.ConnectionState;
+import com.zsoft.signala.SignalAUtils;
+import com.zsoft.signala.SendCallback;
+import com.zsoft.signala.transport.ProcessResult;
+import com.zsoft.signala.transport.TransportHelper;
 import com.zsoft.parallelhttpclient.ParallelHttpClient;
 
 import java.util.Map;
@@ -123,8 +123,8 @@ public class ReconnectingState extends StopableStateWithCallback {
 
 		ParallelHttpClient httpClient = new ParallelHttpClient();
         httpClient.setMaxRetries(1);
-        httpClient.setConnectionTimeout(5000);
-	httpClient.setReadTimeout(115000);
+        httpClient.setConnectionTimeout(15000);
+	    httpClient.setReadTimeout(15000);
         for (Map.Entry<String, String> entry : mConnection.getHeaders().entrySet())
         {
             httpClient.addHeader(entry.getKey(), entry.getValue());

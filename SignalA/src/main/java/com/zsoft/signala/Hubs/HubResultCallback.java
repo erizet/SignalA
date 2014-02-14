@@ -1,4 +1,4 @@
-package com.zsoft.SignalA.Hubs;
+package com.zsoft.signala.hubs;
 
 public class HubResultCallback {
 
