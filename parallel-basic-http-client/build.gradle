@@ -14,7 +14,7 @@ repositories {
 
 android {
     compileSdkVersion 18
-    buildToolsVersion "17.0.0"
+    buildToolsVersion '17.0.0'
 
     defaultConfig {
         minSdkVersion 9
@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    compile files('libs/basic-http-client-android-0.88.jar');
+    compile files('libs/basic-http-client-android-0.88.jar')
 }
 
 apply from: '../maven_push.gradle'

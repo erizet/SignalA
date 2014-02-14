@@ -4,8 +4,18 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="C:\Users\Erik\AndroidStudioProjects\SignalAProject" />
-        <option name="useAutoImport" value="true" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Demo" />
+            <option value="$PROJECT_DIR$/HubDemo" />
+            <option value="$PROJECT_DIR$/HubGroupDemo" />
+            <option value="$PROJECT_DIR$/SignalA" />
+            <option value="$PROJECT_DIR$/SignalA.LongPolling" />
+            <option value="$PROJECT_DIR$/parallel-basic-http-client" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

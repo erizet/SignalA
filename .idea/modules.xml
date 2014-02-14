@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo/Demo.iml" filepath="$PROJECT_DIR$/Demo/Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/HubDemo/HubDemo.iml" filepath="$PROJECT_DIR$/HubDemo/HubDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/HubGroupDemo/HubGroupDemo.iml" filepath="$PROJECT_DIR$/HubGroupDemo/HubGroupDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SignalA/SignalA.iml" filepath="$PROJECT_DIR$/SignalA/SignalA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SignalA.iml" filepath="$PROJECT_DIR$/SignalA.iml" />
       <module fileurl="file://$PROJECT_DIR$/SignalA/SignalA-SignalA.iml" filepath="$PROJECT_DIR$/SignalA/SignalA-SignalA.iml" />
       <module fileurl="file://$PROJECT_DIR$/SignalA.LongPolling/SignalA.LongPolling.iml" filepath="$PROJECT_DIR$/SignalA.LongPolling/SignalA.LongPolling.iml" />
       <module fileurl="file://$PROJECT_DIR$/SignalAProject.iml" filepath="$PROJECT_DIR$/SignalAProject.iml" />
