@@ -71,8 +71,9 @@
     </content>
     <orderEntry type="jdk" jdkName="Android 4.3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="parallel-basic-http-client" exported="" />
+    <orderEntry type="library" exported="" name="basic-http-client-android-0.88" level="project" />
     <orderEntry type="module" module-name="SignalA-SignalA" exported="" />
+    <orderEntry type="module" module-name="parallel-basic-http-client" exported="" />
   </component>
 </module>
 

@@ -71,8 +71,8 @@
     <orderEntry type="jdk" jdkName="Android 4.3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="support-v4-18.0.0" level="project" />
-    <orderEntry type="module" module-name="SignalA-SignalA" exported="" />
     <orderEntry type="module" module-name="SignalA.LongPolling" exported="" />
+    <orderEntry type="module" module-name="SignalA-SignalA" exported="" />
   </component>
 </module>
 

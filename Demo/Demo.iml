@@ -70,9 +70,9 @@
     </content>
     <orderEntry type="jdk" jdkName="Android 4.3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="SignalA-SignalA" exported="" />
-    <orderEntry type="module" module-name="SignalA.LongPolling" exported="" />
     <orderEntry type="library" exported="" name="android-query-full.0.24.2-beta" level="project" />
+    <orderEntry type="module" module-name="SignalA.LongPolling" exported="" />
+    <orderEntry type="module" module-name="SignalA-SignalA" exported="" />
   </component>
 </module>
 
