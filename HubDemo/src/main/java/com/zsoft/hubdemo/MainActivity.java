@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity implements OnDisconnectionReq
 		};
 		
 		try {
-			hub = con.CreateHubProxy("calculatorhub");
+			hub = con.CreateHubProxy("calculator");
 		} catch (OperationApplicationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

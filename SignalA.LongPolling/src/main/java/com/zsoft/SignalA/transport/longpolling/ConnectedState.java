@@ -52,14 +52,10 @@ public class ConnectedState extends StopableStateWithCallback {
 			return; 
 		}
 
-	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
-	    url +=  "send?transport=" + TRANSPORT_NAME;
-		try {
-			url += "&connectionToken=" + URLEncoder.encode(mConnection.getConnectionToken(), "utf-8");
-		} catch (UnsupportedEncodingException e) {
-			Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
-		}
-		TransportHelper.AppendCustomQueryString(mConnection, url);
+        String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") + "send";
+        String connectionData = mConnection.OnSending();
+        url += TransportHelper.GetSendQueryString(mConnection, connectionData, TRANSPORT_NAME);
+        TransportHelper.AppendCustomQueryString(mConnection, url);
 
 		AsyncCallback cb = new AsyncCallback() 
 		{
@@ -108,19 +104,7 @@ public class ConnectedState extends StopableStateWithCallback {
 
 		if(DoStop()) return; 
 
-	    String baseUrl = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/");
-	    String url = "";
-
-	    if (mConnection.getMessageId() == null || mConnection.getMessageId().length()==0)
-		{
-			url += "connect";
-		}
-	    else
-	    {
-			url += "poll";
-	    }
-
-//	    url += TransportHelper.GetReceiveQueryString(mConnection, null, TRANSPORT_NAME);
+	    String url = SignalAUtils.EnsureEndsWith(mConnection.getUrl(), "/") + "poll";
 		String connectionData = mConnection.OnSending();
 	    url += TransportHelper.GetReceiveQueryString(mConnection, connectionData, TRANSPORT_NAME);
 
@@ -140,7 +124,7 @@ public class ConnectedState extends StopableStateWithCallback {
 
                 			if(result.processingFailed)
                 			{
-                				mConnection.setError(new Exception("Error while proccessing response."));
+                				mConnection.setError(new Exception("Error while processing response."));
                 				mConnection.SetNewState(new ReconnectingState(mConnection));
                 			}
                 			else if(result.disconnected)
@@ -182,7 +166,7 @@ public class ConnectedState extends StopableStateWithCallback {
 			//mCurrentCallback = cb;
 		}
 
-		ParallelHttpClient httpClient = new ParallelHttpClient(baseUrl);
+		ParallelHttpClient httpClient = new ParallelHttpClient();
 		httpClient.setMaxRetries(1);
 		httpClient.setConnectionTimeout(5000);
 		httpClient.setReadTimeout(115000);

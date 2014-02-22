@@ -37,6 +37,7 @@ public class TransportHelper {
 
 		result.timedOut = response.optInt("T") == 1;	
 		result.disconnected = response.optInt("D") == 1;
+        result.initialized = response.optInt("S") == 1;
 		newMessageId = response.optString("C");
 		messagesArray = response.optJSONArray("M");
 		groupsToken = response.optString("G", null);
@@ -60,7 +61,9 @@ public class TransportHelper {
 
         if (messagesArray != null)
         {
-			for (int i = 0; i < messagesArray.length(); i++) {
+            connection.setMessageId(newMessageId);
+
+            for (int i = 0; i < messagesArray.length(); i++) {
 				try {
 					connection.setMessage(messagesArray.getJSONObject(i));
 				} catch (JSONException e) {
@@ -68,15 +71,85 @@ public class TransportHelper {
 				}
 			}
 
-            connection.setMessageId(newMessageId);
+            // ToDo: Initialize the connection?
+            //if(result.initialized)
+                //connection.onInitialized();
         }
         
         return result;
     }
 
-    
-    
-	public static String GetReceiveQueryString(ConnectionBase connection, String data, String transport)
+
+    public static String GetNegotiationQueryString(ConnectionBase connection, String connectionData)
+    {
+        if (connection == null)
+        {
+            throw new IllegalArgumentException("connection");
+        }
+
+        String qs = "?clientProtocol=";
+        qs += connection.getProtocolVersion();
+
+        if (connectionData != null)
+        {
+            try {
+                qs += "&connectionData=" + URLEncoder.encode(connectionData, "utf-8");
+            } catch (UnsupportedEncodingException e) {
+                Log.e(TAG, "Unsupported message encoding error, when encoding connectionData.");
+            }
+        }
+
+        return qs;
+    }
+
+
+    public static String GetSendQueryString(ConnectionBase connection, String connectionData, String transport)
+    {
+        if (connection == null)
+        {
+            throw new IllegalArgumentException("connection");
+        }
+
+        String qs = "?transport=";
+        qs += transport;
+        try {
+            qs += "&connectionToken=" + URLEncoder.encode(connection.getConnectionToken(), "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            Log.e(TAG, "Unsupported message encoding error, when encoding connectionToken.");
+        }
+
+        if (connection.getGroupsToken() != null && connection.getGroupsToken().length() > 0)
+        {
+            try {
+                qs += "&groupsToken=" + URLEncoder.encode(connection.getGroupsToken(), "utf-8");
+            } catch (UnsupportedEncodingException e) {
+                Log.e(TAG, "Unsupported message encoding error, when encoding groupsToken.");
+            }
+        }
+
+        if (connectionData != null)
+        {
+            try {
+                qs += "&connectionData=" + URLEncoder.encode(connectionData, "utf-8");
+            } catch (UnsupportedEncodingException e) {
+                Log.e(TAG, "Unsupported message encoding error, when encoding connectionData.");
+            }
+        }
+
+        if(connection.getQueryString() != null && connection.getQueryString().length() > 0)
+        {
+            try {
+                qs += "&" + URLEncoder.encode(connection.getQueryString(), "utf-8");
+            } catch (UnsupportedEncodingException e) {
+                Log.e(TAG, "Unsupported message encoding error, when encoding querystring.");
+            }
+        }
+
+        return qs;
+    }
+
+
+    public static String GetReceiveQueryString(ConnectionBase connection, String data, String transport)
     {
         if (connection == null)
         {
@@ -173,7 +246,7 @@ public class TransportHelper {
             char firstChar = customQuery.charAt(0);
 
             // If the custom query string already starts with an ampersand or question mark
-            // then we dont have to use any appender, it can be empty.
+            // then we don't have to use any appender, it can be empty.
             if (firstChar != '?' && firstChar != '&')
             {
                 appender = "?";

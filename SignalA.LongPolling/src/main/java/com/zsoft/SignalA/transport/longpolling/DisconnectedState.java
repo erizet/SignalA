@@ -38,7 +38,7 @@ public class DisconnectedState extends StateBase {
 	protected void OnRun() {
 		if(requestStart.get())
 		{
-	        ConnectingState s = new ConnectingState(mConnection);
+	        NegotiatingState s = new NegotiatingState(mConnection);
 	        mConnection.SetNewState(s);
 		}
 	}

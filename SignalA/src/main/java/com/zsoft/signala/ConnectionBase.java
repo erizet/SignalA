@@ -101,8 +101,10 @@ public abstract class ConnectionBase {
 	}
 	
 	public boolean VerifyProtocolVersion(String protocolVersion) {
-		return protocolVersion.compareTo("1.2") == 0;
+		return protocolVersion.compareTo(getProtocolVersion()) == 0;
 	}
+
+    public String getProtocolVersion() { return "1.3"; }
 
 	public String getMessageId() {
 		return mMessageId;
