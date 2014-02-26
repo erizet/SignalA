@@ -21,8 +21,8 @@ public class ConnectionFragment extends Fragment {
 	    View view = inflater.inflate(R.layout.connection_fragment, container, false);
 	    
 	    mAddressTextBox = (EditText) view.findViewById(R.id.address);
-	    //mAddressTextBox.setText("http://signalrcalc.apphb.com");
-	    mAddressTextBox.setText("http://192.168.1.70:8080");
+	    mAddressTextBox.setText("http://signalrcalc.apphb.com");
+	    //mAddressTextBox.setText("http://192.168.1.70:8080");
 	    Button button = (Button) view.findViewById(R.id.btnConnect);
 	    button.setOnClickListener(new View.OnClickListener() {
 	      @Override
