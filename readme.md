@@ -53,7 +53,7 @@ Http-requests in the Long polling library is using [basic-http-client][bhc].
 SignalA is published on Maven Central as a ARR. If you're using Android Studio/Gradle all you have to do is add it on your gradle build:
 
 	dependencies {
-	    compile 'com.github.erizet.signala:signala-longpolling:0.15'
+	    compile 'com.github.erizet.signala:signala-longpolling:0.16'
 	}
 
 ##How to use?##
