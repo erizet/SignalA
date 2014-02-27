@@ -7,6 +7,10 @@
 
 ##Updates##
 
+###2014-02-27 version 0.20###
+- Updated protocol version to 1.3, which is used by SignalR 2.0.
+- Changed AndroidManifest to lowercase to fix https://github.com/erizet/SignalA/issues/39
+
 ###2014-02-14 version 0.16###
 - Set timeouts before reconnecting, [9d2af153444e318ed7611f5b28d76729c3b0ac57](https://github.com/mrbirdman/SignalA/commit/9d2af153444e318ed7611f5b28d76729c3b0ac57). Thanks to [mrbirdman](https://github.com/mrbirdman).
 - Changed package names to lowercase.
@@ -53,7 +57,7 @@ Http-requests in the Long polling library is using [basic-http-client][bhc].
 SignalA is published on Maven Central as a ARR. If you're using Android Studio/Gradle all you have to do is add it on your gradle build:
 
 	dependencies {
-	    compile 'com.github.erizet.signala:signala-longpolling:0.16'
+	    compile 'com.github.erizet.signala:signala-longpolling:0.20'
 	}
 
 ##How to use?##
