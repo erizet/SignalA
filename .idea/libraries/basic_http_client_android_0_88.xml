@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="basic-http-client-android-0.88">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/SignalA.LongPolling/build/exploded-bundles/ComGithubErizetSignalaParallelBasicHttpClient017SNAPSHOT.aar/libs/basic-http-client-android-0.88.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
