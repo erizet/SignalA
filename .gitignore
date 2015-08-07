@@ -5,6 +5,7 @@
 *.ipr
 *.iws
 .idea/
+/build
 
 # OSX files
 .DS_Store
