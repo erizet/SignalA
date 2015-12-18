@@ -12,6 +12,8 @@ public class JSONHelper {
 			json = new JSONObject(text);
 		} catch (JSONException e) {
 			json = null;
+		} catch (NullPointerException e){
+			json = null;
 		}
 		return json;
 	}
