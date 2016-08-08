@@ -5,6 +5,9 @@
 
 #SignalA#
 
+#Important note#
+I will no longer update this library.
+
 ##Updates##
 
 ###2014-02-27 version 0.20###
