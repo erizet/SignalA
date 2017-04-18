@@ -3,44 +3,44 @@
 [bhc]: https://code.google.com/p/basic-http-client/
 [calc]: http://signalrcalc.apphb.com/
 
-#SignalA#
+# SignalA #
 
-#Important note#
+# Important note #
 I will no longer update this library.
 
-##Updates##
+## Updates ##
 
-###2014-02-27 version 0.20###
+### 2014-02-27 version 0.20 ###
 - Updated protocol version to 1.3, which is used by SignalR 2.0.
 - Changed AndroidManifest to lowercase to fix https://github.com/erizet/SignalA/issues/39
 
-###2014-02-14 version 0.16###
+### 2014-02-14 version 0.16 ###
 - Set timeouts before reconnecting, [9d2af153444e318ed7611f5b28d76729c3b0ac57](https://github.com/mrbirdman/SignalA/commit/9d2af153444e318ed7611f5b28d76729c3b0ac57). Thanks to [mrbirdman](https://github.com/mrbirdman).
 - Changed package names to lowercase.
 
-###2014-01-17 version 0.15###
+### 2014-01-17 version 0.15 ###
 - Added support for custom headers, [52a75bca5f15a0d242c3f6acd02cde7637e6582b](https://github.com/erizet/SignalA/commit/52a75bca5f15a0d242c3f6acd02cde7637e6582b). Thanks to [egoetschalckx](https://github.com/egoetschalckx).
 
-###2014-01-01 version 0.14###
+### 2014-01-01 version 0.14 ###
 - Converted project to Android Studio and Gradle.
 - Published SignalA on Maven Central.
 
-###2013-08-12 version 0.13###
+### 2013-08-12 version 0.13 ###
 - I've introduced the ability to send a custom querystring. https://github.com/erizet/SignalA/issues/24
 - Changed when OnStateChanged is fired. Now the event is fired AFTER the new state is run. See https://github.com/erizet/SignalA/issues/21#issuecomment-22296485 
 
-###2013-07-31 version 0.12###
+### 2013-07-31 version 0.12 ###
 - Fixed handling of groupstoken.
 - Removed .metadata folder from repo.
 - Use 'poll' instead of 'reconect' in urls for polling the server.
 
-###2013-06-27 version 0.11###
+### 2013-06-27 version 0.11 ###
 Two fixes in this release.
 - https://github.com/erizet/SignalA/issues/11
 - https://github.com/erizet/SignalA/issues/22
 
 
-###2013-02-20 version 0.10beta released###
+### 2013-02-20 version 0.10beta released ###
 I've changed a coupe of things in this release.
 - I have changed the transport. LongPolling now uses [basic-http-client][bhc] instead of [Aquery][aq] for http communication. I've removed all dependencies on [Aquery][aq].
 - Hubs is now implemented. Checkout my implementation and say what you think about it. Calling functions on server from client, and calling functions on client from server is supported. NOTE! State is not implemented yet.
@@ -48,22 +48,22 @@ I've changed a coupe of things in this release.
 - I have also set up a [SignalR][sr] server on Appharbor so HubDemo can talk to it. You'll find it [here][calc].
 
 
-###2013-02-20 version 0.9beta released###
+### 2013-02-20 version 0.9beta released ###
 Version 0.9beta uses the SignalR-protocol version 1.2 which is used in the 1.0 release of SignalR.
 It has also (beta)support for groups.
 
-##Description##
+## Description ##
 SignalA is a [SignalR][sr]-client for Android. It's implemented as a Android-library. At this moment is long polling the only implemented transport. Long polling is a separate library.
 Http-requests in the Long polling library is using [basic-http-client][bhc].
 
-##Add SignalA to your project##
+## Add SignalA to your project ##
 SignalA is published on Maven Central as a ARR. If you're using Android Studio/Gradle all you have to do is add it on your gradle build:
 
 	dependencies {
 	    compile 'com.github.erizet.signala:signala-longpolling:0.20'
 	}
 
-##How to use?##
+## How to use? ##
 Add the following code to your activity.
 
       String url = "http://<address to your SignalR-server>";
@@ -102,16 +102,16 @@ That's it!
 
 For a complete sample see the Demo-project.
 
-##Limitations##
+## Limitations ##
 Hubs don't support State yet.
 
-##Contributions##
+## Contributions ##
 I'll be more than happy to get contributions!!!
 
-##Are you using SignalA?##
+## Are you using SignalA? ##
 If you're using SignalA I would appreciate to hear from you - where and how are you using it?
 
-##License##
+## License ##
 
     Copyright 2013 Erik Zetterqvist
     
